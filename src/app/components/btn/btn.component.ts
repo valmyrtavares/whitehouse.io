@@ -1,8 +1,10 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 
 @Component({
   selector: 'taba-btn',
   templateUrl: './btn.component.html',
   styleUrls: ['./btn.component.scss'],
 })
-export class BtnComponent {}
+export class BtnComponent {
+  @Input() legendBtn: string;
+}

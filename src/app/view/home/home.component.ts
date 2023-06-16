@@ -5,4 +5,7 @@ import { Component } from '@angular/core';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.scss'],
 })
-export class HomeComponent {}
+export class HomeComponent {
+  promotion: string = 'Promoções de datas imperdíveis';
+  booking: string = 'Faça a sua reserva';
+}
