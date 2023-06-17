@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { environmentPropetyModel } from 'src/app/model/models';
 import { MockService } from '../../mock/mock.service';
 
@@ -7,11 +7,8 @@ import { MockService } from '../../mock/mock.service';
   templateUrl: './container-route-icons.component.html',
   styleUrls: ['./container-route-icons.component.scss'],
 })
-export class ContainerRouteIconsComponent implements OnInit {
-  dataEnvironementProperty: environmentPropetyModel[];
+export class ContainerRouteIconsComponent {
+  @Input() currentData: environmentPropetyModel[];
+  @Input() title: string;
   constructor(private data: MockService) {}
-
-  ngOnInit() {
-    this.dataEnvironementProperty = this.data.environementProperty;
-  }
 }

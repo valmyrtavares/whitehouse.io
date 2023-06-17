@@ -2,5 +2,12 @@
   <app-header></app-header>
   <taba-btn [legendBtn]="promotion"></taba-btn>
   <taba-btn [legendBtn]="booking"></taba-btn>
-  <taba-container-route-icons></taba-container-route-icons>
+  <taba-container-route-icons
+    [currentData]="dataEnvironementProperty"
+    title="Conheça a nossa casa"
+  ></taba-container-route-icons>
+  <taba-container-route-icons
+    [currentData]="customersReporters"
+    title="Depoimento dos nossos clientes"
+  ></taba-container-route-icons>
 </div>

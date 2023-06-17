@@ -67,4 +67,22 @@ export class MockService {
         'https://drive.google.com/uc?export=download&id=1X4nDA9Wf9pMFkP-zGc-LvoRZMPy33vXY',
     },
   ];
+
+  customersReporters: environmentPropetyModel[] = [
+    {
+      label: '',
+      image:
+        'https://drive.google.com/uc?export=download&id=1-hDAJh9J1TDjtUKyMF-wxuCXgNNF_jsW',
+    },
+    {
+      label: '',
+      image:
+        'https://drive.google.com/uc?export=download&id=14e31F_GqqfCIlw5ULIVbOFYl_bYcPSeq',
+    },
+    {
+      label: '',
+      image:
+        'https://drive.google.com/uc?export=download&id=1tmCZnvS4dLz22GLZ9PmW590ZTWAOrx6F',
+    },
+  ];
 }
