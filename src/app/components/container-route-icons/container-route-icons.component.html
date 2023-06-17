@@ -1,6 +1,8 @@
-<div class="taba-container-route-icons container">
+<div class="taba-container-route-icons">
   <div *ngFor="let item of dataEnvironementProperty">
-    <img [src]="item.image" alt="" />
+    <div class="img_container">
+      <img [src]="item.image" alt="" />
+    </div>
     <h3>{{ item.label }}</h3>
   </div>
 </div>

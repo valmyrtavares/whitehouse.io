@@ -34,7 +34,7 @@ export class MockService {
     {
       label: 'Piscina',
       image:
-        'https://drive.google.com/uc?export=download&id=1OYEMvanYKhKCD35-UYr2Zbr5HPmXbSgR/view?usp=drive_link',
+        'https://drive.google.com/uc?export=download&id=1OYEMvanYKhKCD35-UYr2Zbr5HPmXbSgR',
     },
     {
       label: 'Jardins',
