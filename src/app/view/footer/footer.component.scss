@@ -1,0 +1,23 @@
+.taba-footer{
+    width: 100vw;
+    background-color: #a5bfda;
+    padding: 0px 4px;
+    p{
+        text-align: center;
+        font-size: 15px;
+        color: #fff;
+        margin-bottom: 4px;
+        font-family: Leelawadee;
+    }
+    .social-midias-icons{
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        margin-top: 10px;
+        svg{
+            cursor:pointer;
+
+        }
+      
+    }
+}

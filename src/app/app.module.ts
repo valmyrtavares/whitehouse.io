@@ -8,6 +8,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { BtnComponent } from './components/btn/btn.component';
 import { ContainerRouteIconsComponent } from './components/container-route-icons/container-route-icons.component';
 import { MockUtensilsComponent } from './view/home/mock-utensils/mock-utensils.component';
+import { FooterComponent } from './view/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { MockUtensilsComponent } from './view/home/mock-utensils/mock-utensils.c
     HeaderComponent,
     BtnComponent,
     ContainerRouteIconsComponent,
-    MockUtensilsComponent
+    MockUtensilsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
