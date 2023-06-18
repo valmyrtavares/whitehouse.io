@@ -85,4 +85,9 @@ export class MockService {
         'https://drive.google.com/uc?export=download&id=1tmCZnvS4dLz22GLZ9PmW590ZTWAOrx6F',
     },
   ];
+  mockData: any[] = [
+    ['Rancho', 'Facas', 'talheres', 'copos'],
+    ['Sala', 'Sofas', 'TV', 'DVD player'],
+    ['Cozinha', 'Pratos', 'talheres', 'Abridor de latas'],
+  ];
 }

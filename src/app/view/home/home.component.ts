@@ -12,11 +12,13 @@ export class HomeComponent implements OnInit {
   booking: string = 'Faça a sua reserva';
   dataEnvironementProperty: environmentPropetyModel[];
   customersReporters: environmentPropetyModel[];
+  homeUtensils: string[];
 
   constructor(private data: MockService) {}
 
   ngOnInit() {
     this.dataEnvironementProperty = this.data.environementProperty;
     this.customersReporters = this.data.customersReporters;
+    this.homeUtensils = this.data.mockData;
   }
 }

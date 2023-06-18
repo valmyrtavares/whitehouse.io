@@ -7,6 +7,7 @@ import { HomeComponent } from './view/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { BtnComponent } from './components/btn/btn.component';
 import { ContainerRouteIconsComponent } from './components/container-route-icons/container-route-icons.component';
+import { MockUtensilsComponent } from './view/home/mock-utensils/mock-utensils.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { ContainerRouteIconsComponent } from './components/container-route-icons
     HomeComponent,
     HeaderComponent,
     BtnComponent,
-    ContainerRouteIconsComponent
+    ContainerRouteIconsComponent,
+    MockUtensilsComponent
   ],
   imports: [
     BrowserModule,

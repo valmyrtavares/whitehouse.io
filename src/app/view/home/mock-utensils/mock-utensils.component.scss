@@ -1,0 +1,33 @@
+.taba_mock_utensils{
+
+    h1{
+        text-align: left;
+        width: 80%;
+        font-size: 23px;
+        color:#4490EE;
+        font-family:Ink Free;
+        margin :10px 0;
+    } 
+    .hoseholdUtensils{
+        border: 1px solid #4490EE;
+        padding: 10px;
+        border-radius: 10px;
+        display: flex;
+    
+     div{
+        width: 33%;
+        display: flex;
+        flex-direction: column;
+        p{
+            margin:1px 0;
+            font-weight: normal
+        }
+     };
+    }
+    p{
+       text-align: center;
+       margin-top: 10px;
+       font-weight: bold;
+       color:#4490EE;
+    }
+}
