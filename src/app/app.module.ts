@@ -9,6 +9,7 @@ import { BtnComponent } from './components/btn/btn.component';
 import { ContainerRouteIconsComponent } from './components/container-route-icons/container-route-icons.component';
 import { MockUtensilsComponent } from './view/home/mock-utensils/mock-utensils.component';
 import { FooterComponent } from './view/footer/footer.component';
+import { ShowcaseComponent } from './view/showcase/showcase.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FooterComponent } from './view/footer/footer.component';
     BtnComponent,
     ContainerRouteIconsComponent,
     MockUtensilsComponent,
-    FooterComponent
+    FooterComponent,
+    ShowcaseComponent
   ],
   imports: [
     BrowserModule,
