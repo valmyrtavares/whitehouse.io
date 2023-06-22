@@ -10,6 +10,7 @@ import { ContainerRouteIconsComponent } from './components/container-route-icons
 import { MockUtensilsComponent } from './view/home/mock-utensils/mock-utensils.component';
 import { FooterComponent } from './view/footer/footer.component';
 import { ShowcaseComponent } from './view/showcase/showcase.component';
+import { PromotionComponent } from './view/promotion/promotion.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ShowcaseComponent } from './view/showcase/showcase.component';
     ContainerRouteIconsComponent,
     MockUtensilsComponent,
     FooterComponent,
-    ShowcaseComponent
+    ShowcaseComponent,
+    PromotionComponent
   ],
   imports: [
     BrowserModule,

@@ -1,11 +1,15 @@
 <div class="container">
-  <app-header></app-header>
-  <taba-btn [legendBtn]="promotion"></taba-btn>
+  <taba-header></taba-header>
+
+  <taba-btn [legendBtn]="promotion" pathway="promotion"></taba-btn>
+
   <taba-btn [legendBtn]="booking"></taba-btn>
+
   <taba-container-route-icons
     [currentData]="dataEnvironementProperty"
     title="Conheça a nossa casa"
   ></taba-container-route-icons>
+
   <taba-mock-utensils
     [homeUtensils]="homeUtensils"
     title="Todos os itens e utensílios da nossa casa"
