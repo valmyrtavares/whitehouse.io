@@ -4,6 +4,7 @@ import {
   environmentPropetyModel,
   customerReporters,
   promotions,
+  utensil,
 } from '../model/models';
 
 @Injectable({
@@ -357,6 +358,100 @@ export class MockService {
       title: 'Promoção de Novembro',
       description:
         'Fim de seman perfeito por apenas de 5 a 10 de Outubro R$ 5.500,00 com Chatz Incluso',
+    },
+  ];
+
+  utensils: utensil[] = [
+    {
+      title: true,
+      label: 'Facas',
+      image: '',
+      category: 'barbecueArea',
+      categoryLabel: 'Churrasco',
+    },
+    {
+      title: false,
+      label: 'Grelha',
+      image: '',
+      category: 'barbecueArea',
+      categoryLabel: 'Churrasco',
+    },
+    {
+      title: false,
+      label: 'Espeto',
+      image: '',
+      category: 'barbecueArea',
+      categoryLabel: 'Churrasco',
+    },
+    {
+      title: true,
+      label: 'Aspirador de pó',
+      image: '',
+      category: 'cleaning',
+      categoryLabel: 'Limpeza',
+    },
+    {
+      title: false,
+      label: 'Rodo',
+      image: '',
+      category: 'cleaning',
+      categoryLabel: 'Limpeza',
+    },
+    {
+      title: true,
+      label: 'espelho',
+      image: '',
+      category: 'restroom',
+      categoryLabel: 'Cama e banho',
+    },
+    {
+      title: false,
+      label: 'Travesseiros',
+      image: '',
+      category: 'restroom',
+      categoryLabel: 'Cama e banho',
+    },
+    {
+      title: true,
+      label: 'Abridor de lata',
+      image: '',
+      category: 'kitchen',
+      categoryLabel: 'Cozinha',
+    },
+    {
+      title: false,
+      label: 'Talheres',
+      image: '',
+      category: 'kitchen',
+      categoryLabel: 'Cozinha',
+    },
+    {
+      title: false,
+      label: 'Abridor de vinho',
+      image: '',
+      category: 'kitchen',
+      categoryLabel: 'Cozinha',
+    },
+    {
+      title: false,
+      label: 'Loça',
+      image: '',
+      category: 'kitchen',
+      categoryLabel: 'Cozinha',
+    },
+    {
+      title: true,
+      label: 'Cadeira de sol',
+      image: '',
+      category: 'swimmingPool',
+      categoryLabel: 'Piscina',
+    },
+    {
+      title: false,
+      label: 'Guarda Sol',
+      image: '',
+      category: 'swimmingPool',
+      categoryLabel: 'Piscina',
     },
   ];
 }

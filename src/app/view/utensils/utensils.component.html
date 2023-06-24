@@ -1,0 +1,12 @@
+<div>
+  <ng-container *ngFor="let category of categories">
+    <div *ngIf="hasItems(category)">
+      <button *ngIf="isFirstCategoryItem(category)" class="category-button">
+        {{ category.categoryLabel }}
+      </button>
+      <ng-container *ngFor="let item of getCategoryItems(category)">
+        <h1>{{ item.label }}</h1>
+      </ng-container>
+    </div>
+  </ng-container>
+</div>

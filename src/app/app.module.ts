@@ -11,6 +11,7 @@ import { MockUtensilsComponent } from './view/home/mock-utensils/mock-utensils.c
 import { FooterComponent } from './view/footer/footer.component';
 import { ShowcaseComponent } from './view/showcase/showcase.component';
 import { PromotionComponent } from './view/promotion/promotion.component';
+import { UtensilsComponent } from './view/utensils/utensils.component';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { PromotionComponent } from './view/promotion/promotion.component';
     MockUtensilsComponent,
     FooterComponent,
     ShowcaseComponent,
-    PromotionComponent
+    PromotionComponent,
+    UtensilsComponent
   ],
   imports: [
     BrowserModule,

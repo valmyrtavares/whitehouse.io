@@ -20,3 +20,10 @@ export interface promotions {
   title: string;
   description: string;
 }
+export interface utensil {
+  title: boolean;
+  label: string;
+  image: string;
+  category: string;
+  categoryLabel: string;
+}

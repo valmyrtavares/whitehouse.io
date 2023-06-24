@@ -8,6 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class MockUtensilsComponent implements OnInit {
   @Input() homeUtensils: string[];
   @Input() title: string;
+  @Input() pathway: string;
 
   ranch: string;
   room: string;
