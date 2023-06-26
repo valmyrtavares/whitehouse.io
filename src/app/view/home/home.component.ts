@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { MockService } from '../../mock/mock.service';
+import { ApiService } from '../../mock/api.service';
 import {
   environmentPropetyModel,
   customerReporters,
@@ -13,15 +14,20 @@ import {
 export class HomeComponent implements OnInit {
   promotion: string = 'Promoções de datas imperdíveis';
   booking: string = 'Faça a sua reserva';
-  dataEnvironementProperty: environmentPropetyModel[];
   customersReporters: customerReporters[];
   homeUtensils: string[];
+  dataEnvironementProperty: environmentPropetyModel[];
+  apiEnvironmentProperty: environmentPropetyModel[];
 
-  constructor(private data: MockService) {}
+  constructor(private data: MockService, private api: ApiService) {}
 
   ngOnInit() {
     this.dataEnvironementProperty = this.data.environementProperty;
     this.customersReporters = this.data.customersReporters;
     this.homeUtensils = this.data.mockData;
+
+    this.api.getData('environmentProperty').subscribe((environmentProperty) => {
+      this.apiEnvironmentProperty = environmentProperty;
+    });
   }
 }

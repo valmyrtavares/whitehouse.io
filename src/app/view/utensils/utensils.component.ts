@@ -45,4 +45,7 @@ export class UtensilsComponent {
       this.getCategoryItems(category)[0]
     );
   }
+  toggleItems(category) {
+    console.log(category);
+  }
 }
