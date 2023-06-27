@@ -87,7 +87,7 @@ export class MockService {
       label: 'Aéreo',
       image:
         'https://drive.google.com/uc?export=download&id=1v2NFx5XhqJvwQvVlo52hrTXUBwKKWn2E',
-      route: 'arero',
+      route: 'aereo',
     },
     {
       comment: '',
@@ -319,13 +319,13 @@ export class MockService {
     },
     {
       comment: '',
-      category: 'arero',
+      category: 'aereo',
       image:
         'https://drive.google.com/uc?export=download&id=15ssu7Z0gGjSnbBtdgoKKLkyVBT8Tmu3-',
     },
     {
       comment: '',
-      category: 'arero',
+      category: 'aereo',
       image:
         'https://drive.google.com/uc?export=download&id=15ssu7Z0gGjSnbBtdgoKKLkyVBT8Tmu3-',
     },

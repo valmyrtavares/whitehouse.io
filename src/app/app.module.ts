@@ -12,6 +12,8 @@ import { FooterComponent } from './view/footer/footer.component';
 import { ShowcaseComponent } from './view/showcase/showcase.component';
 import { PromotionComponent } from './view/promotion/promotion.component';
 import { UtensilsComponent } from './view/utensils/utensils.component';
+import { SearchComponent } from './components/search/search.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,13 +26,11 @@ import { UtensilsComponent } from './view/utensils/utensils.component';
     FooterComponent,
     ShowcaseComponent,
     PromotionComponent,
-    UtensilsComponent
+    UtensilsComponent,
+    SearchComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}

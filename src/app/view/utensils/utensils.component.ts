@@ -5,6 +5,7 @@ import { utensil } from 'src/app/model/models';
 interface Category {
   category: string;
   categoryLabel: string;
+  displayItems: boolean;
 }
 
 @Component({
@@ -15,17 +16,26 @@ interface Category {
 export class UtensilsComponent {
   utensilsItems: utensil[];
   categories: Category[];
+  searchText: string = '';
 
   constructor(private data: MockService) {}
 
   ngOnInit(): void {
     this.utensilsItems = this.data.utensils;
     this.categories = [
-      { category: 'barbecueArea', categoryLabel: 'Barbecue Area' },
-      { category: 'cleaning', categoryLabel: 'Cleaning' },
-      { category: 'restroom', categoryLabel: 'Restroom' },
-      { category: 'kitchen', categoryLabel: 'Cozinha' },
-      { category: 'swimmingPool', categoryLabel: 'Swimming Pool' },
+      {
+        category: 'barbecueArea',
+        categoryLabel: 'Barbecue Area',
+        displayItems: true,
+      },
+      { category: 'cleaning', categoryLabel: 'Cleaning', displayItems: false },
+      { category: 'restroom', categoryLabel: 'Restroom', displayItems: false },
+      { category: 'kitchen', categoryLabel: 'Cozinha', displayItems: false },
+      {
+        category: 'swimmingPool',
+        categoryLabel: 'Swimming Pool',
+        displayItems: false,
+      },
     ];
   }
 
@@ -47,5 +57,8 @@ export class UtensilsComponent {
   }
   toggleItems(category) {
     console.log(category);
+  }
+  onSearchTextEntered(searchValue: string) {
+    this.searchText = searchValue;
   }
 }

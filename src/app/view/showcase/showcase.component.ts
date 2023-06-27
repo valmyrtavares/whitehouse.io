@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MockService } from '../../mock/mock.service';
+import { ApiService } from '../../mock/api.service';
 import {
   environementPropertyPlaces,
   customerReporters,
@@ -15,7 +16,11 @@ export class ShowcaseComponent {
   id: string;
   imagesData: environementPropertyPlaces[] | customerReporters[];
   imagesDataFiltered: environementPropertyPlaces[] | customerReporters[];
-  constructor(private route: ActivatedRoute, private data: MockService) {
+  constructor(
+    private route: ActivatedRoute,
+    private data: MockService,
+    private api: ApiService
+  ) {
     this.id = this.route.snapshot.params['id'];
   }
 
@@ -25,11 +30,17 @@ export class ShowcaseComponent {
       this.id === 'secondCustomer' ||
       this.id === 'thirdCustomer'
     ) {
-      this.imagesData = this.data.customersReporters;
+      this.api.getData('customersReporters').subscribe((data) => {
+        this.imagesData = data;
+        this.filterData(this.imagesData);
+      });
       this.filterData(this.imagesData);
     } else {
-      this.imagesData = this.data.environementPropertyPlaces;
-      this.filterData(this.imagesData);
+      // this.imagesData = this.data.environementPropertyPlaces;
+      this.api.getData('environementPropertyPlaces').subscribe((data) => {
+        this.imagesData = data;
+        this.filterData(this.imagesData);
+      });
     }
   }
 
