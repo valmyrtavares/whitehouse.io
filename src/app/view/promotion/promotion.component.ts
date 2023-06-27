@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { MockService } from '../../mock/mock.service';
+import { ApiService } from '../../mock/api.service';
 import { promotions } from 'src/app/model/models';
 
 @Component({
@@ -8,7 +8,13 @@ import { promotions } from 'src/app/model/models';
   styleUrls: ['./promotion.component.scss'],
 })
 export class PromotionComponent {
-  dataPromotion: promotions[] = this.data.promotions;
+  dataPromotion: promotions[];
 
-  constructor(private data: MockService) {}
+  constructor(private api: ApiService) {}
+
+  ngOnInit() {
+    this.api.getData('promotions').subscribe((data) => {
+      this.dataPromotion = data;
+    });
+  }
 }

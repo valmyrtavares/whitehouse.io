@@ -16,18 +16,22 @@ export class HomeComponent implements OnInit {
   booking: string = 'Faça a sua reserva';
   customersReporters: customerReporters[];
   homeUtensils: string[];
-  dataEnvironementProperty: environmentPropetyModel[];
+  //dataEnvironementProperty: environmentPropetyModel[];
   apiEnvironmentProperty: environmentPropetyModel[];
 
   constructor(private data: MockService, private api: ApiService) {}
 
   ngOnInit() {
-    this.dataEnvironementProperty = this.data.environementProperty;
+    // this.dataEnvironementProperty = this.data.environementProperty;
     this.customersReporters = this.data.customersReporters;
     this.homeUtensils = this.data.mockData;
 
     this.api.getData('environmentProperty').subscribe((environmentProperty) => {
       this.apiEnvironmentProperty = environmentProperty;
+    });
+
+    this.api.getData('utensil').subscribe((data) => {
+      this.homeUtensils = data;
     });
   }
 }

@@ -21,7 +21,6 @@ export interface promotions {
   description: string;
 }
 export interface utensil {
-  title: boolean;
   label: string;
   image: string;
   category: string;
