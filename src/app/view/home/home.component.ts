@@ -1,10 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  ElementRef,
+  OnInit,
+  ViewChild,
+} from '@angular/core';
 import { MockService } from '../../mock/mock.service';
 import { ApiService } from '../../mock/api.service';
 import {
   environmentPropetyModel,
   customerReporters,
 } from 'src/app/model/models';
+// import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
   selector: 'taba-home',
@@ -16,10 +23,15 @@ export class HomeComponent implements OnInit {
   booking: string = 'Faça a sua reserva';
   customersReporters: customerReporters[];
   homeUtensils: string[];
-  //dataEnvironementProperty: environmentPropetyModel[];
+
+  // @ViewChild('section1Element') section1Element: ElementRef;
+
   apiEnvironmentProperty: environmentPropetyModel[];
 
-  constructor(private data: MockService, private api: ApiService) {}
+  constructor(
+    private data: MockService,
+    private api: ApiService //private router: Router
+  ) {}
 
   ngOnInit() {
     // this.dataEnvironementProperty = this.data.environementProperty;
@@ -34,4 +46,14 @@ export class HomeComponent implements OnInit {
       this.homeUtensils = data;
     });
   }
+
+  // ngAfterViewInit() {
+  //   if (event instanceof NavigationEnd) {
+  //     if (this.section1Element) {
+  //       this.section1Element.nativeElement.scrollIntoView({
+  //         behavior: 'smooth',
+  //       });
+  //     }
+  //   }
+  // }
 }

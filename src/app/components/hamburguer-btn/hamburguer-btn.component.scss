@@ -1,0 +1,66 @@
+.taba-btn-hamburguer{
+    position: relative;
+    [data-btn="mobile"]{
+        display: none;
+    }
+    z-index: 10;
+    
+    [data-btn="mobile"]::before{      
+        z-index: 10;
+        content: '';
+        width: 42px;
+        height: 5px;
+        //display: inline-block;
+        background: black;
+        margin-right: 4px;
+        box-shadow: 0 11px black, 0 -11px black;
+        position: fixed;
+        top: 10px;
+        left: -2px;
+        
+    }
+    
+    @media(max-width:600px){
+        .content_home ul{
+            display: none;
+        }
+        [data-btn="mobile"]{
+            display: block !important;
+            transform: translate(53%, 65px);
+            width: 50px;
+            background: none;
+            border: none;  
+        }
+    }
+    
+    }
+    .menu-movel{
+        button{
+            background: none;
+            border: none;
+            font-size: 27px;
+            margin-right: 10px;
+            
+        }
+        min-height: 40%;
+        background:white;
+        width: 50%;
+        z-index: 10;
+        position: fixed;
+        top: 30px;
+        left:20px;
+        background: #C3D5EB;
+        box-shadow: 10px 10px 20px black;
+        ul{
+            list-style: none;
+            height: 40vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            li{
+                font-family: Ink Free;
+                color: #4490EE;
+                font-size: 23px;
+            }
+        }
+    }

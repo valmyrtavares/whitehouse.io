@@ -14,6 +14,7 @@ import { PromotionComponent } from './view/promotion/promotion.component';
 import { UtensilsComponent } from './view/utensils/utensils.component';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
+import { HamburguerBtnComponent } from './components/hamburguer-btn/hamburguer-btn.component';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { FormsModule } from '@angular/forms';
     PromotionComponent,
     UtensilsComponent,
     SearchComponent,
+    HamburguerBtnComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

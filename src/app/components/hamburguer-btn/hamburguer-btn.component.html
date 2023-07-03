@@ -1,0 +1,19 @@
+<div class="taba-btn-hamburguer">
+  <button (click)="openMOpenCloseModalodal('none')" data-btn="mobile"></button>
+</div>
+<div class="menu-movel" *ngIf="OpenCloseModal">
+  <div class="close-modal d-flex flex-row-reverse">
+    <button (click)="openMOpenCloseModalodal('none')" data-btn="mobile">
+      x
+    </button>
+  </div>
+  <ul>
+    <li (click)="openMOpenCloseModalodal('')">Home</li>
+    <li (click)="openMOpenCloseModalodal('promotion')">Promoções</li>
+    <li (click)="openMOpenCloseModalodal('utensils')">Untensílios</li>
+    <li routerLink="/" fragment="sec" (click)="openMOpenCloseModalodal('none')">
+      Conheça nossa casa
+    </li>
+    <li (click)="openMOpenCloseModalodal('')">Quinto</li>
+  </ul>
+</div>
