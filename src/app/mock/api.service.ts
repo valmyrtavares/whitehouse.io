@@ -4,10 +4,12 @@ import {
   collection,
   getFirestore,
   getDocs,
+  addDoc,
   QuerySnapshot,
 } from 'firebase/firestore';
 import { from, Observable, of } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
+import { environementPropertyPlaces } from '../model/models';
 
 @Injectable({
   providedIn: 'root',
@@ -27,6 +29,20 @@ export class ApiService {
   constructor() {
     this.app = initializeApp(this.firebaseConfig);
     this.db = getFirestore(this.app);
+  }
+
+  createCollection(data: environementPropertyPlaces): void {
+    debugger;
+    new Observable((observer) => {
+      addDoc(collection(this.db, 'environementPropertyPlaces'), data)
+        .then((ref) => {
+          observer.next(ref);
+          observer.complete();
+        })
+        .catch((error) => {
+          observer.error(error);
+        });
+    });
   }
 
   getData(data): Observable<any[]> {

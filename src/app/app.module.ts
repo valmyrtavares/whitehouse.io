@@ -15,6 +15,7 @@ import { UtensilsComponent } from './view/utensils/utensils.component';
 import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { HamburguerBtnComponent } from './components/hamburguer-btn/hamburguer-btn.component';
+import { EnvironmentImagesComponent } from './view/admin/environment-images/environment-images.component';
 
 @NgModule({
   declarations: [
@@ -30,6 +31,7 @@ import { HamburguerBtnComponent } from './components/hamburguer-btn/hamburguer-b
     UtensilsComponent,
     SearchComponent,
     HamburguerBtnComponent,
+    EnvironmentImagesComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule],
   providers: [],

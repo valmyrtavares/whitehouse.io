@@ -1,0 +1,45 @@
+<p>environment-images works!</p>
+<div class="container taba-environment-form">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <input type="hidden" name="comment" [ngModel]="environmentImages.comment" />
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Categoria das imagens
+      </label>
+      <select
+        class="form-select"
+        name="category"
+        [ngModel]="environmentImages.category"
+        aria-label="Default select example"
+      >
+        <option [ngModel]="environmentImages.category" selected>
+          Escolha o local da sua imagem
+        </option>
+        <option value="frontHome">Fachada</option>
+        <option value="suíteRoom">Suite 1</option>
+        <option value="livingRoom">Sala</option>
+        <option value="kitchen">Cozinha</option>
+        <option value="livingRoom">Piscina</option>
+        <option value="garden">Jardins</option>
+        <option value="barbecueArea">Churrasco</option>
+        <option value="pizzaArea">Pizza</option>
+        <option value="ranchoArea">Rancho</option>
+        <option value="aereo">Aéreo</option>
+        <option value="secondSuite">Suite 2</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Imagem </label>
+      <input
+        type="text"
+        name="image"
+        [ngModel]="environmentImages.image"
+        class="form-control"
+        id="exampleFormControlInput1"
+      />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+    </div>
+  </form>
+</div>
