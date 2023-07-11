@@ -17,6 +17,7 @@ import { FormsModule } from '@angular/forms';
 import { HamburguerBtnComponent } from './components/hamburguer-btn/hamburguer-btn.component';
 import { EnvironmentImagesComponent } from './view/admin/environment-images/environment-images.component';
 import { HttpClientModule } from '@angular/common/http';
+import { FormMenuComponent } from './view/admin/form-menu/form-menu.component';
 
 @NgModule({
   declarations: [
@@ -33,6 +34,7 @@ import { HttpClientModule } from '@angular/common/http';
     SearchComponent,
     HamburguerBtnComponent,
     EnvironmentImagesComponent,
+    FormMenuComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
