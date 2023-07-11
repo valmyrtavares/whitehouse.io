@@ -7,10 +7,12 @@ import {
 } from '@angular/core';
 import { MockService } from '../../mock/mock.service';
 import { ApiService } from '../../mock/api.service';
+import { ApiRealtimeDatabaseService } from 'src/app/mock/api-realtime-database.service';
 import {
   environmentPropetyModel,
   customerReporters,
 } from 'src/app/model/models';
+
 // import { Router, NavigationEnd } from '@angular/router';
 
 @Component({
@@ -30,7 +32,8 @@ export class HomeComponent implements OnInit {
 
   constructor(
     private data: MockService,
-    private api: ApiService //private router: Router
+    private api: ApiService, //private router: Router,
+    private newApi: ApiRealtimeDatabaseService
   ) {}
 
   ngOnInit() {
@@ -38,22 +41,19 @@ export class HomeComponent implements OnInit {
     this.customersReporters = this.data.customersReporters;
     this.homeUtensils = this.data.mockData;
 
-    this.api.getData('environmentProperty').subscribe((environmentProperty) => {
-      this.apiEnvironmentProperty = environmentProperty;
-    });
+    // this.api.getData('environmentProperty').subscribe((environmentProperty) => {
+    //   this.apiEnvironmentProperty = environmentProperty;
+    // });
 
     this.api.getData('utensil').subscribe((data) => {
       this.homeUtensils = data;
     });
-  }
 
-  // ngAfterViewInit() {
-  //   if (event instanceof NavigationEnd) {
-  //     if (this.section1Element) {
-  //       this.section1Element.nativeElement.scrollIntoView({
-  //         behavior: 'smooth',
-  //       });
-  //     }
-  //   }
-  // }
+    this.newApi
+      .getData('environementProperty')
+      .subscribe((environmentProperty: environmentPropetyModel[]) => {
+        console.log(environmentProperty);
+        this.apiEnvironmentProperty = environmentProperty;
+      });
+  }
 }

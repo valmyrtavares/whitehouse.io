@@ -32,7 +32,6 @@ export class ApiService {
   }
 
   createCollection(data: environementPropertyPlaces): void {
-    debugger;
     new Observable((observer) => {
       addDoc(collection(this.db, 'environementPropertyPlaces'), data)
         .then((ref) => {
@@ -43,6 +42,7 @@ export class ApiService {
           observer.error(error);
         });
     });
+    ('');
   }
 
   getData(data): Observable<any[]> {

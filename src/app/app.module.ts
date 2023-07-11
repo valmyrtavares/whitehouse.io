@@ -16,6 +16,7 @@ import { SearchComponent } from './components/search/search.component';
 import { FormsModule } from '@angular/forms';
 import { HamburguerBtnComponent } from './components/hamburguer-btn/hamburguer-btn.component';
 import { EnvironmentImagesComponent } from './view/admin/environment-images/environment-images.component';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -33,7 +34,7 @@ import { EnvironmentImagesComponent } from './view/admin/environment-images/envi
     HamburguerBtnComponent,
     EnvironmentImagesComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, FormsModule],
+  imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

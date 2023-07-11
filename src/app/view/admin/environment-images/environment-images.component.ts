@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { environementPropertyPlaces } from 'src/app/model/models';
 import { ApiService } from 'src/app/mock/api.service';
+import { ApiRealtimeDatabaseService } from 'src/app/mock/api-realtime-database.service';
 
 @Component({
   selector: 'app-environment-images',
@@ -9,7 +10,10 @@ import { ApiService } from 'src/app/mock/api.service';
   styleUrls: ['./environment-images.component.scss'],
 })
 export class EnvironmentImagesComponent {
-  constructor(private api: ApiService) {}
+  constructor(
+    private api: ApiService,
+    private newApi: ApiRealtimeDatabaseService
+  ) {}
 
   environmentImages: environementPropertyPlaces = {
     comment: '',
@@ -18,6 +22,7 @@ export class EnvironmentImagesComponent {
   };
 
   onSubmit(form: NgForm) {
-    this.api.createCollection(this.environmentImages);
+    this.newApi.createCollection('environementPropertyPlaces', form.value);
+    console.log(form.value);
   }
 }
