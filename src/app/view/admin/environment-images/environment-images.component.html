@@ -1,20 +1,38 @@
-<p>environment-images works!</p>
 <div class="container taba-environment-form">
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-    <input type="hidden" name="comment" [ngModel]="environmentImages.comment" />
+  <div *ngIf="createNewEnviromentImages">
+    <taba-create-images-environment></taba-create-images-environment>
+  </div>
+
+  <!-- All images environements -->
+  <div *ngFor="let item of environmentImagesformData">
+    <div class="image-form-wrapper">
+      <div class="image-form"><img [src]="item.image" alt="" /></div>
+      <button class="btn btn-danger" (click)="deleteImage(item.id)">
+        Excluir
+      </button>
+      <button class="btn btn-primary" (click)="onEditClicked(item.id)">
+        Editar
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Edit form -->
+<div class="edit_field" [hidden]="editField">
+  <form #productEdit="ngForm" (ngSubmit)="onEdit(productEdit.value)">
+    <input type="hidden" name="comment" ngModel />
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label"
-        >Categoria das imagens
+        >Editar Categoria das imagens
       </label>
       <select
         class="form-select"
         name="category"
-        [ngModel]="environmentImages.category"
+        id="category"
+        ngModel
         aria-label="Default select example"
       >
-        <option [ngModel]="environmentImages.category" selected>
-          Escolha o local da sua imagem
-        </option>
+        <option selected>Escolha o local da sua imagem</option>
         <option value="frontHome">Fachada</option>
         <option value="suíteRoom">Suite 1</option>
         <option value="livingRoom">Sala</option>
@@ -29,11 +47,14 @@
       </select>
     </div>
     <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Imagem </label>
+      <label for="exampleFormControlInput1" class="form-label"
+        >Editar Imagem
+      </label>
       <input
         type="text"
         name="image"
-        [ngModel]="environmentImages.image"
+        id="image"
+        ngModel
         class="form-control"
         id="exampleFormControlInput1"
       />

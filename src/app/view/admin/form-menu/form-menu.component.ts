@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
 })
 export class FormMenuComponent {
   environementPropertyPlaces: string = 'Imagens de partes selecionadas';
+  luxx: string = 'Mundano clientes';
 }

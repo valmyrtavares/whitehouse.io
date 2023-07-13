@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, map } from 'rxjs';
+import { NgForm } from '@angular/forms';
 
 @Injectable({
   providedIn: 'root',
@@ -32,6 +33,24 @@ export class ApiRealtimeDatabaseService {
       .post(
         `https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/${data}.json`,
         content
+      )
+      .subscribe((res) => {
+        console.log(res);
+      });
+  }
+
+  deleteImage(data: string, id: string) {
+    return this.http.delete(
+      `https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/${data}/${id}.json`
+    );
+  }
+
+  updateImage(collecton: string, id: string, form: NgForm) {
+    debugger;
+    this.http
+      .put(
+        `https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/${collecton}/${id}.json`,
+        form
       )
       .subscribe((res) => {
         console.log(res);

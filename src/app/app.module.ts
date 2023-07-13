@@ -18,6 +18,7 @@ import { HamburguerBtnComponent } from './components/hamburguer-btn/hamburguer-b
 import { EnvironmentImagesComponent } from './view/admin/environment-images/environment-images.component';
 import { HttpClientModule } from '@angular/common/http';
 import { FormMenuComponent } from './view/admin/form-menu/form-menu.component';
+import { CreateImagesEnvironmentComponent } from './view/admin/environment-images/create-images-environment/create-images-environment.component';
 
 @NgModule({
   declarations: [
@@ -35,6 +36,7 @@ import { FormMenuComponent } from './view/admin/form-menu/form-menu.component';
     HamburguerBtnComponent,
     EnvironmentImagesComponent,
     FormMenuComponent,
+    CreateImagesEnvironmentComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],

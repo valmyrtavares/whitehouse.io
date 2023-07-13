@@ -16,6 +16,11 @@ export interface environementPropertyPlaces {
   category: string;
   image: string;
 }
+export interface getEnvironementPropertyPlaces {
+  comment: string;
+  category: string;
+  image: string;
+}
 export interface promotions {
   title: string;
   description: string;
@@ -25,4 +30,9 @@ export interface utensil {
   image: string;
   category: string;
   categoryLabel: string;
+}
+export interface environementPropertyPlacesEdit {
+  comment: '';
+  category: '';
+  image: '';
 }
