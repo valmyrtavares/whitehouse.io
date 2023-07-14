@@ -1,5 +1,9 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-  <input type="hidden" name="comment" [ngModel]="environmentImages.comment" />
+  <input
+    type="hidden"
+    name="comment"
+    [ngModel]="environmentCustomerReporters.comment"
+  />
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label"
       >Categoria das imagens
@@ -7,10 +11,10 @@
     <select
       class="form-select"
       name="category"
-      [ngModel]="environmentImages.category"
+      [ngModel]="environmentCustomerReporters.category"
       aria-label="Default select example"
     >
-      <option [ngModel]="environmentImages.category" selected>
+      <option [ngModel]="environmentCustomerReporters.category" selected>
         Escolha o local da sua imagem
       </option>
       <option value="frontHome">Fachada</option>
@@ -31,17 +35,7 @@
     <input
       type="text"
       name="image"
-      [ngModel]="environmentImages.image"
-      class="form-control"
-      id="exampleFormControlInput1"
-    />
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Imagem </label>
-    <input
-      type="text"
-      name="image"
-      [ngModel]="environmentImages.image"
+      [ngModel]="environmentCustomerReporters.image"
       class="form-control"
       id="exampleFormControlInput1"
     />

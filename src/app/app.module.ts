@@ -19,6 +19,8 @@ import { EnvironmentImagesComponent } from './view/admin/environment-images/envi
 import { HttpClientModule } from '@angular/common/http';
 import { FormMenuComponent } from './view/admin/form-menu/form-menu.component';
 import { CreateImagesEnvironmentComponent } from './view/admin/environment-images/create-images-environment/create-images-environment.component';
+import { CustomerReporterFormComponent } from './view/admin/customer-reporter-form/customer-reporter-form.component';
+import { CreateCustomerReporterFormComponent } from './view/admin/customer-reporter-form/create-customer-reporter-form/create-customer-reporter-form.component';
 
 @NgModule({
   declarations: [
@@ -37,6 +39,8 @@ import { CreateImagesEnvironmentComponent } from './view/admin/environment-image
     EnvironmentImagesComponent,
     FormMenuComponent,
     CreateImagesEnvironmentComponent,
+    CustomerReporterFormComponent,
+    CreateCustomerReporterFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
