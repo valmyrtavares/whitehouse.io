@@ -1,1 +1,14 @@
-<taba-create-customer-reporter-form></taba-create-customer-reporter-form>
+<div *ngIf="showForm" class="edit_field">
+  <taba-create-customer-reporter-form
+    [customerReporter]="customerReporter"
+    (parentFunction)="parentFunction($event)"
+  ></taba-create-customer-reporter-form>
+</div>
+<div class="container">
+  <h3>Clique no cliente para editar</h3>
+  <div *ngFor="let item of customerReporterList" (click)="editCustomer(item)">
+    <div class="wrapper">
+      <img [src]="item.image" alt="" />
+    </div>
+  </div>
+</div>

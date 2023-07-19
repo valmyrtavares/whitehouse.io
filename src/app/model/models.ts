@@ -11,6 +11,14 @@ export interface customerReporters {
   category: string;
   comment: string;
 }
+export interface customerReportersEdit {
+  image: string;
+  label: string;
+  route: string;
+  id: string;
+  category: string;
+  comment: string;
+}
 export interface environementPropertyPlaces {
   comment: string;
   category: string;

@@ -1,9 +1,7 @@
 <form #f="ngForm" (ngSubmit)="onSubmit(f)">
-  <input
-    type="hidden"
-    name="comment"
-    [ngModel]="environmentCustomerReporters.comment"
-  />
+  <input type="hidden" name="label" [ngModel]="customerReporter.label" />
+  <input type="hidden" name="id" [ngModel]="customerReporter.id" />
+  <input type="hidden" name="route" [ngModel]="customerReporter.route" />
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label"
       >Categoria das imagens
@@ -11,23 +9,15 @@
     <select
       class="form-select"
       name="category"
-      [ngModel]="environmentCustomerReporters.category"
+      [ngModel]="customerReporter.category"
       aria-label="Default select example"
     >
-      <option [ngModel]="environmentCustomerReporters.category" selected>
-        Escolha o local da sua imagem
+      <option [ngModel]="customerReporter.category" selected>
+        "" Escolha o local da sua imagem
       </option>
-      <option value="frontHome">Fachada</option>
-      <option value="suíteRoom">Suite 1</option>
-      <option value="livingRoom">Sala</option>
-      <option value="kitchen">Cozinha</option>
-      <option value="livingRoom">Piscina</option>
-      <option value="garden">Jardins</option>
-      <option value="barbecueArea">Churrasco</option>
-      <option value="pizzaArea">Pizza</option>
-      <option value="ranchoArea">Rancho</option>
-      <option value="aereo">Aéreo</option>
-      <option value="secondSuite">Suite 2</option>
+      <option value="firstCustomer">Primeiro Cliente</option>
+      <option value="secondCustomer">Segundo Cliente 1</option>
+      <option value="thirdCustomer">Terceiro Cliente</option>
     </select>
   </div>
   <div class="mb-3">
@@ -35,10 +25,19 @@
     <input
       type="text"
       name="image"
-      [ngModel]="environmentCustomerReporters.image"
+      [ngModel]="customerReporter.image"
       class="form-control"
       id="exampleFormControlInput1"
     />
+  </div>
+  <div class="mb-3">
+    <label>Comments</label>
+    <textarea
+      class="form-control progress"
+      style="height: 35vh"
+      name="comment"
+      [ngModel]="customerReporter.comment"
+    ></textarea>
   </div>
   <div class="col-auto">
     <button type="submit" class="btn btn-primary mb-3">Enviar</button>

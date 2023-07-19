@@ -46,7 +46,6 @@ export class ApiRealtimeDatabaseService {
   }
 
   updateImage(collecton: string, id: string, form: NgForm) {
-    debugger;
     this.http
       .put(
         `https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/${collecton}/${id}.json`,
