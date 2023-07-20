@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class FormMenuComponent {
   environementPropertyPlaces: string = 'Imagens de partes selecionadas';
   customerReports: string = 'Depoimento de clientes';
+  promotion: string = 'Promoções';
 }

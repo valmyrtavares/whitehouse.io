@@ -40,9 +40,11 @@ export class ApiRealtimeDatabaseService {
   }
 
   deleteImage(data: string, id: string) {
-    return this.http.delete(
+    let lux = this.http.delete(
       `https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/${data}/${id}.json`
     );
+    console.log(lux);
+    return lux;
   }
 
   updateImage(collecton: string, id: string, form: NgForm) {

@@ -1,0 +1,27 @@
+<div class="container mt-5">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Titulo </label>
+      <input
+        type="text"
+        name="title"
+        ngModel
+        class="form-control"
+        id="exampleFormControlInput1"
+      />
+    </div>
+    <div class="mb-3">
+      <label>Comments</label>
+      <textarea
+        class="form-control progress"
+        style="height: 35vh"
+        name="comment"
+        ngModel
+      ></textarea>
+    </div>
+
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+    </div>
+  </form>
+</div>

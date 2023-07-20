@@ -31,7 +31,12 @@ export interface getEnvironementPropertyPlaces {
 }
 export interface promotions {
   title: string;
-  description: string;
+  comment: string;
+}
+export interface promotionsEdit {
+  id: string;
+  title: string;
+  comment: string;
 }
 export interface utensil {
   label: string;

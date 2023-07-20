@@ -346,17 +346,17 @@ export class MockService {
   promotions: promotions[] = [
     {
       title: 'Promoção de Outubro',
-      description:
+      comment:
         '5 dias no paraíso por apenas de 5 a 10 de Outubro R$ 5.500,00 com Chatz Incluso',
     },
     {
       title: 'Promoção de Verão',
-      description:
+      comment:
         '10 dias no paraíso por apenas de 7 a 17 de Outubro R$ 25.500,00 com Chatz Incluso',
     },
     {
       title: 'Promoção de Novembro',
-      description:
+      comment:
         'Fim de seman perfeito por apenas de 5 a 10 de Outubro R$ 5.500,00 com Chatz Incluso',
     },
   ];

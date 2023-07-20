@@ -1,0 +1,50 @@
+<div *ngIf="!createForm; else nodisplay">
+  <button
+    type="button"
+    class="btn btn-primary rounded-circle mt-5"
+    (click)="toggleCreateForm()"
+  >
+    +
+  </button>
+</div>
+<ng-template #nodisplay>
+  <taba-creation-promotion
+    (parentFunction)="toggleCreateForm()"
+  ></taba-creation-promotion>
+</ng-template>
+
+```
+<div class="container">
+  <ng-container *ngFor="let item of dataPromotion">
+    <h3>{{ item.title }}</h3>
+    <button (click)="deletePromotion(item.id)">Excluir</button>
+    <button (click)="onEditClicked(item.id)">Editar</button>
+  </ng-container>
+</div>
+<div class="container mt-5" [hidden]="!editField">
+  <form #productEdit="ngForm" (ngSubmit)="onEdit(productEdit.value)">
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Titulo </label>
+      <input
+        type="text"
+        name="title"
+        ngModel
+        class="form-control"
+        id="exampleFormControlInput1"
+      />
+    </div>
+    <div class="mb-3">
+      <label>Comments</label>
+      <textarea
+        class="form-control progress"
+        style="height: 35vh"
+        name="comment"
+        ngModel
+      ></textarea>
+    </div>
+
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+    </div>
+  </form>
+</div>

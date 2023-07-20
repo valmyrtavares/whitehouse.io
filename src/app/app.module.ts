@@ -21,6 +21,8 @@ import { FormMenuComponent } from './view/admin/form-menu/form-menu.component';
 import { CreateImagesEnvironmentComponent } from './view/admin/environment-images/create-images-environment/create-images-environment.component';
 import { CustomerReporterFormComponent } from './view/admin/customer-reporter-form/customer-reporter-form.component';
 import { CreateCustomerReporterFormComponent } from './view/admin/customer-reporter-form/create-customer-reporter-form/create-customer-reporter-form.component';
+import { PromotionFormComponent } from './view/admin/promotion-form/promotion-form.component';
+import { CreationPromotionComponent } from './view/admin/promotion-form/creation-promotion/creation-promotion.component';
 
 @NgModule({
   declarations: [
@@ -41,6 +43,8 @@ import { CreateCustomerReporterFormComponent } from './view/admin/customer-repor
     CreateImagesEnvironmentComponent,
     CustomerReporterFormComponent,
     CreateCustomerReporterFormComponent,
+    PromotionFormComponent,
+    CreationPromotionComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
