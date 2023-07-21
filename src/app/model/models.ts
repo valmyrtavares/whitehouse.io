@@ -4,6 +4,13 @@ export interface environmentPropetyModel {
   label: string;
   route: string;
 }
+export interface environmentPropetyModelEdit {
+  id: string;
+  comment: string;
+  image: string;
+  label: string;
+  route: string;
+}
 export interface customerReporters {
   image: string;
   label: string;

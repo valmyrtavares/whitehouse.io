@@ -1,0 +1,33 @@
+<div class="container taba-menu-form">
+  <div class="container mt-5" [hidden]="!editField">
+    <button class="close-btn" (click)="showModel()">X</button>
+    <form
+      #productEdit="ngForm"
+      class="form-update"
+      (ngSubmit)="onEdit(productEdit.value)"
+    >
+      <input type="hidden" name="comment" ngModel class="form-control" />
+      <input type="hidden" name="route" ngModel class="form-control" />
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Titulo </label>
+        <input type="text" name="label" ngModel class="form-control" />
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label">Imagem </label>
+        <input type="text" name="image" ngModel class="form-control" />
+      </div>
+
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+      </div>
+    </form>
+  </div>
+
+  <ng-container *ngFor="let item of apiEnvironmentProperty">
+    <div class="card-image">
+      <img [src]="item.image" alt="" />
+      <p>{{ item.label }}</p>
+      <button (click)="onEditClicked(item.id)">Editar</button>
+    </div>
+  </ng-container>
+</div>
