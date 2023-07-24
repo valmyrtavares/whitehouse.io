@@ -56,3 +56,14 @@ export interface environementPropertyPlacesEdit {
   category: '';
   image: '';
 }
+export interface utensilsCategory {
+  category: 'string';
+  diplayItems: 'string';
+  label: 'string';
+}
+export interface utensilsCateroryEdit {
+  id: 'string';
+  category: 'string';
+  diplayItems: 'string';
+  label: 'string';
+}

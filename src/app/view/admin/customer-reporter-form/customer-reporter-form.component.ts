@@ -28,7 +28,6 @@ export class CustomerReporterFormComponent implements OnInit {
   editCustomer(data) {
     this.customerReporter = data;
     this.showForm = true;
-    console.log(data);
   }
   parentFunction(e: boolean) {
     this.showForm = e;

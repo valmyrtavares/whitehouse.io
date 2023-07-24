@@ -1,0 +1,12 @@
+<div *ngIf="createCategory; else nodisplay">
+  <button
+    type="button"
+    class="btn btn-primary mt-5"
+    (click)="createCategory = !createCategory"
+  >
+    Crie uma categoria de itens
+  </button>
+</div>
+<ng-template #nodisplay>
+  <taba-category-utensils-form></taba-category-utensils-form>
+</ng-template>

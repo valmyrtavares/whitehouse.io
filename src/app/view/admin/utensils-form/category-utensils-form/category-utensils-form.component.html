@@ -1,0 +1,75 @@
+<div class="container mt-5">
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <input
+      type="hidden"
+      name="displayItems"
+      [ngModel]="displayItems"
+      class="form-control"
+      id="exampleFormControlInput1"
+    />
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Crie uma nova categoria
+      </label>
+      <input
+        type="text"
+        name="label"
+        ngModel
+        class="form-control"
+        id="exampleFormControlInput1"
+      />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+    </div>
+  </form>
+  <div>
+    <h3>Lista de categorias</h3>
+    >
+    <div>
+      <div class="category-list my-3" *ngFor="let item of utensilsCategoryList">
+        <h3>{{ item.label }}</h3>
+        <button (click)="editCategory(item.id)" class="btn btn-primary">
+          Editar
+        </button>
+        <button (click)="deleteCategory(item.id)" class="btn btn-danger">
+          Excluir
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="displayEditForm">
+  <form #ED="ngForm" (ngSubmit)="onEdit(ED)">
+    <input
+      type="hidden"
+      name="category"
+      [ngModel]="currentCategory.category"
+      class="form-control"
+      id="exampleFormControlInput1"
+    />
+    <input
+      type="hidden"
+      name="displayItems"
+      [ngModel]="displayItems"
+      class="form-control"
+      id="exampleFormControlInput1"
+    />
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Editar categoria
+      </label>
+      <input
+        type="text"
+        name="label"
+        [ngModel]="currentCategory.label"
+        class="form-control"
+        id="exampleFormControlInput1"
+      />
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+    </div>
+  </form>
+</div>

@@ -18,7 +18,7 @@
     <div *ngIf="hasItems(category)">
       <h3
         (click)="category.displayItems = !category.displayItems"
-        *ngIf="isFirstCategoryItem(category)"
+        *ngIf="isFirstCategoryItem()"
         class="category-h3"
       >
         {{ category.categoryLabel }}

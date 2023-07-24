@@ -17,5 +17,23 @@ export class UsefulFunctionsService {
     }
   }
 
+  transformCategoryName(data: string): String {
+    const words: string[] = data.split(' ');
+    console.log(words);
+    if (words.length > 1) {
+      return (
+        words[0].toLowerCase() +
+        words
+          .slice(1)
+          .map(
+            (item) =>
+              item.charAt(0).toUpperCase() + item.slice(1).toLocaleLowerCase()
+          )
+          .join('')
+      );
+    } else {
+      return data.toLowerCase();
+    }
+  }
   constructor() {}
 }

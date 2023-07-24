@@ -40,7 +40,8 @@ export class UtensilsComponent {
   }
 
   hasItems(category: Category): boolean {
-    return this.getCategoryItems(category).length > 0;
+    let x = this.getCategoryItems(category).length > 0;
+    return x;
   }
 
   getCategoryItems(category: Category): utensil[] {
@@ -49,11 +50,8 @@ export class UtensilsComponent {
     );
   }
 
-  isFirstCategoryItem(category: Category): boolean {
-    return (
-      this.utensilsItems.find((item) => item.category === category.category) ===
-      this.getCategoryItems(category)[0]
-    );
+  isFirstCategoryItem(): boolean {
+    return true;
   }
   toggleItems(category) {
     console.log(category);

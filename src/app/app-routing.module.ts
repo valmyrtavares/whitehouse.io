@@ -9,6 +9,7 @@ import { FormMenuComponent } from './view/admin/form-menu/form-menu.component';
 import { CustomerReporterFormComponent } from './view/admin/customer-reporter-form/customer-reporter-form.component';
 import { PromotionFormComponent } from './view/admin/promotion-form/promotion-form.component';
 import { MenuIconFormComponent } from './view/admin/menu-icon-form/menu-icon-form.component';
+import { UtensilsFormComponent } from './view/admin/utensils-form/utensils-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -23,6 +24,7 @@ const routes: Routes = [
   { path: 'customer-form', component: CustomerReporterFormComponent },
   { path: 'form-promotion', component: PromotionFormComponent },
   { path: 'form-icon-menu', component: MenuIconFormComponent },
+  { path: 'form-utensils', component: UtensilsFormComponent },
 ];
 
 @NgModule({

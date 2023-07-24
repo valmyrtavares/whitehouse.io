@@ -24,6 +24,8 @@ import { CreateCustomerReporterFormComponent } from './view/admin/customer-repor
 import { PromotionFormComponent } from './view/admin/promotion-form/promotion-form.component';
 import { CreationPromotionComponent } from './view/admin/promotion-form/creation-promotion/creation-promotion.component';
 import { MenuIconFormComponent } from './view/admin/menu-icon-form/menu-icon-form.component';
+import { CategoryUtensilsFormComponent } from './view/admin/utensils-form/category-utensils-form/category-utensils-form.component';
+import { UtensilsFormComponent } from './view/admin/utensils-form/utensils-form.component';
 
 @NgModule({
   declarations: [
@@ -47,6 +49,8 @@ import { MenuIconFormComponent } from './view/admin/menu-icon-form/menu-icon-for
     PromotionFormComponent,
     CreationPromotionComponent,
     MenuIconFormComponent,
+    UtensilsFormComponent,
+    CategoryUtensilsFormComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
