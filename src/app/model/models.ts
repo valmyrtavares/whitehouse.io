@@ -51,6 +51,12 @@ export interface utensil {
   category: string;
   categoryLabel: string;
 }
+export interface utensilEdit {
+  label: string;
+  image: string;
+  category: string;
+  id: string;
+}
 export interface environementPropertyPlacesEdit {
   comment: '';
   category: '';

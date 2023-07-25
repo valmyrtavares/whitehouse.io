@@ -1,11 +1,51 @@
 <div *ngIf="createCategory; else nodisplay">
   <button
     type="button"
-    class="btn btn-primary mt-5"
+    class="btn btn-primary my-5"
     (click)="createCategory = !createCategory"
   >
     Crie uma categoria de itens
   </button>
+  <ng-container *ngIf="createUtensils">
+    <taba-add-edit
+      [title]="titleAdd"
+      [utensilEditObj]=""
+      [utensilsCategoryList]="utensilsCategoryList"
+      (parentFunction)="parentFunction($event)"
+      (closeModal)="toggleCreateForm($event)"
+      [typeOfData]="'add'"
+    ></taba-add-edit>
+  </ng-container>
+  <ng-container *ngFor="let item of utensilsList">
+    <div class="utensil-list my-3">
+      <p>{{ item.label }}</p>
+      <button (click)="deleteUtensil(item.id)" class="btn btn-danger">
+        Excluir
+      </button>
+      <button (click)="editUtensil(item.id)" class="btn btn-success">
+        Editar
+      </button>
+    </div>
+  </ng-container>
+  <ng-container *ngIf="editUtensils">
+    <taba-add-edit
+      [title]="titleEdit"
+      [utensilEditObj]="utensilEditObj"
+      [utensilsCategoryList]="utensilsCategoryList"
+      [typeOfData]="'edit'"
+      (parentFunction)="parentFunction($event)"
+      (closeModal)="toggleCreateForm($event)"
+    ></taba-add-edit>
+  </ng-container>
+  <div>
+    <button
+      type="button"
+      class="btn btn-primary rounded-circle mt-5"
+      (click)="toggleCreateForm('add')"
+    >
+      +
+    </button>
+  </div>
 </div>
 <ng-template #nodisplay>
   <taba-category-utensils-form></taba-category-utensils-form>

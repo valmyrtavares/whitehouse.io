@@ -1,0 +1,56 @@
+<div class="close-btn">
+  <button (click)="closeForm()" style="float: right">X</button>
+</div>
+<div>
+  <h3>{{ title }}</h3>
+</div>
+<form #f="ngForm" class="row g-3" (ngSubmit)="selectData(f.value)">
+  <!-- ID FORM -->
+  <input
+    type="hidden"
+    name="id"
+    class="form-control"
+    [ngModel]="utensilEditObj?.id"
+    id="inputEmail4"
+  />
+  <div class="col-md-6">
+    <label for="inputEmail4" class="form-label">Titulo do item</label>
+    <input
+      type="text"
+      name="label"
+      class="form-control"
+      [ngModel]="utensilEditObj?.label"
+      id="inputEmail4"
+    />
+  </div>
+  <div class="col-md-6">
+    <label for="inputPassword4" class="form-label">Categoria</label>
+    <select
+      id="inputState"
+      class="form-select"
+      name="category"
+      [ngModel]="utensilEditObj?.category"
+    >
+      <option selected>Escolha uma categoria</option>
+      <ng-container *ngFor="let item of utensilsCategoryList">
+        <option [value]="item.category">{{ item.label }}</option>
+      </ng-container>
+    </select>
+  </div>
+  <div class="col-12">
+    <label for="inputAddress" class="form-label"
+      >Selecione o URL da imagem</label
+    >
+    <input
+      type="text"
+      name="image"
+      [ngModel]="utensilEditObj?.image"
+      class="form-control"
+      id="inputAddress"
+    />
+  </div>
+
+  <div class="col-12">
+    <button type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form>

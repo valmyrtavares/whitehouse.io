@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
+import { ApiRealtimeDatabaseService } from 'src/app/mock/api-realtime-database.service';
 import { MockService } from 'src/app/mock/mock.service';
 import { utensil } from 'src/app/model/models';
 
 interface Category {
   category: string;
-  categoryLabel: string;
+  label: string;
   displayItems: boolean;
 }
 
@@ -15,28 +16,31 @@ interface Category {
 })
 export class UtensilsComponent {
   utensilsItems: utensil[];
-  categories: Category[];
+  utensilsCategoryList: Category[];
   searchText: string = '';
 
-  constructor(private data: MockService) {}
+  constructor(
+    private data: MockService,
+    private newApi: ApiRealtimeDatabaseService
+  ) {}
 
   ngOnInit(): void {
     this.utensilsItems = this.data.utensils;
-    this.categories = [
-      {
-        category: 'barbecueArea',
-        categoryLabel: 'Barbecue Area',
-        displayItems: true,
-      },
-      { category: 'cleaning', categoryLabel: 'Cleaning', displayItems: false },
-      { category: 'restroom', categoryLabel: 'Restroom', displayItems: false },
-      { category: 'kitchen', categoryLabel: 'Cozinha', displayItems: false },
-      {
-        category: 'swimmingPool',
-        categoryLabel: 'Swimming Pool',
-        displayItems: false,
-      },
-    ];
+    this.fetchCategoryList('utensilCategories');
+    this.fetchCategoryList('utensils');
+  }
+
+  fetchCategoryList(data: string) {
+    this.newApi.getData(data).subscribe((res: []) => {
+      if (data === 'utensils') {
+        this.utensilsItems = res;
+        console.log(this.utensilsItems);
+      }
+      if (data === 'utensilCategories') {
+        this.utensilsCategoryList = res;
+        console.log(this.utensilsCategoryList);
+      }
+    });
   }
 
   hasItems(category: Category): boolean {

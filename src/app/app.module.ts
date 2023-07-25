@@ -26,6 +26,7 @@ import { CreationPromotionComponent } from './view/admin/promotion-form/creation
 import { MenuIconFormComponent } from './view/admin/menu-icon-form/menu-icon-form.component';
 import { CategoryUtensilsFormComponent } from './view/admin/utensils-form/category-utensils-form/category-utensils-form.component';
 import { UtensilsFormComponent } from './view/admin/utensils-form/utensils-form.component';
+import { AddEditComponent } from './view/admin/utensils-form/add-edit/add-edit.component';
 
 @NgModule({
   declarations: [
@@ -51,6 +52,7 @@ import { UtensilsFormComponent } from './view/admin/utensils-form/utensils-form.
     MenuIconFormComponent,
     UtensilsFormComponent,
     CategoryUtensilsFormComponent,
+    AddEditComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [],
