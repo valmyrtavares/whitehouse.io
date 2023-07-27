@@ -10,24 +10,9 @@
           item.label.toLowerCase().includes(searchText.toLowerCase())
         "
       >
-        {{ item.label }}
+        <p>{{ item.label }}</p>
       </h4>
     </ng-container>
-    <!--</div>
-  <ng-container *ngFor="let category of categories">
-    <div *ngIf="hasItems(category)">
-      <h3
-        (click)="category.displayItems = !category.displayItems"
-        *ngIf="isFirstCategoryItem()"
-        class="category-h3"
-      >
-        {{ category.categoryLabel }}
-      </h3>
-      <ng-container *ngFor="let item of getCategoryItems(category)">
-        <p *ngIf="category.displayItems">{{ item.label }}</p>
-      </ng-container>
-    </div>
-  </ng-container> -->
     <div *ngFor="let category of utensilsCategoryList">
       <h3>{{ category.label }}</h3>
       <ng-container *ngFor="let item of utensilsItems">

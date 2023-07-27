@@ -18,6 +18,7 @@ export class UtensilsFormComponent implements OnInit {
   createUtensils: boolean = false;
   editUtensils: boolean = false;
   utensilEditObj: utensilEdit;
+  searchText: string = '';
 
   @ViewChild('nodisplay') nodisplay: TemplateRef<boolean>;
   ngOnInit() {
@@ -79,5 +80,8 @@ export class UtensilsFormComponent implements OnInit {
     if (data === 'edit') {
       this.editUtensils = !this.editUtensils;
     }
+  }
+  onSearchTextEntered(searchValue: string) {
+    this.searchText = searchValue;
   }
 }

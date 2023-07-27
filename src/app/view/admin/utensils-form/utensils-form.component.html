@@ -6,6 +6,27 @@
   >
     Crie uma categoria de itens
   </button>
+
+  <!-- Search component -->
+  <taba-search (searchTextChanged)="onSearchTextEntered($event)"></taba-search>
+
+  <ng-container *ngFor="let item of utensilsList">
+    <div
+      *ngIf="
+        searchText != '' &&
+        item.label.toLowerCase().includes(searchText.toLowerCase())
+      "
+    >
+      <p>{{ item.label }}</p>
+      <button (click)="deleteUtensil(item.id)" class="btn btn-danger">
+        Excluir
+      </button>
+      <button (click)="editUtensil(item.id)" class="btn btn-success">
+        Editar
+      </button>
+    </div>
+  </ng-container>
+
   <ng-container *ngIf="createUtensils">
     <taba-add-edit
       [title]="titleAdd"
