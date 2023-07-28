@@ -12,11 +12,30 @@
             color:#4490EE;
             font-size: 30px;
             font-weight: bold;
+            cursor:pointer;
     
         }
-        p{
-            color:#C3D5EB;
-            font-size: 27px;    
+        .utensils-itens{
+            display: flex;
+            justify-content:space-around;
+            align-items: center;
+
+            p{
+                color:#C3D5EB;
+                font-size: 20px;
+                max-width: 40%;    
+            }
+            div{
+                overflow: hidden;
+                max-width:50px;
+                max-height:50px;
+                border: .5px solid #4490EE;
+                border-radius: 10px;
+                img{
+                    width: 100%;                    
+                    object-fit: cover;     
+                }
+            };
         }
     }
 }

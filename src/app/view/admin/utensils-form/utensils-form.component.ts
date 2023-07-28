@@ -19,6 +19,7 @@ export class UtensilsFormComponent implements OnInit {
   editUtensils: boolean = false;
   utensilEditObj: utensilEdit;
   searchText: string = '';
+  currentId: string;
 
   @ViewChild('nodisplay') nodisplay: TemplateRef<boolean>;
   ngOnInit() {
@@ -63,14 +64,19 @@ export class UtensilsFormComponent implements OnInit {
   }
 
   onEdit(form: NgForm) {
-    this.newApi.updateImage('promotions', 'this.currentId', form);
+    this.newApi.updateImage('utensils', this.currentId, form);
+    this.newApi.getData('utensils').subscribe((res) => {
+      this.router.navigate(['utensils']);
+    });
   }
 
   parentFunction(event: any[]) {
     if (event[1] === 'add') {
       this.onSubmit(event[0]);
     } else if (event[1] === 'edit') {
-      this.onEdit(event[0]);
+      this.currentId = event[0].id;
+      let data = event[0];
+      this.onEdit(data);
     }
   }
   toggleCreateForm(data: string) {

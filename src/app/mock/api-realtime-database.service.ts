@@ -43,7 +43,6 @@ export class ApiRealtimeDatabaseService {
     let lux = this.http.delete(
       `https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/${data}/${id}.json`
     );
-    console.log(lux);
     return lux;
   }
 

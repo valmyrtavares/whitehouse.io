@@ -13,13 +13,26 @@
         <p>{{ item.label }}</p>
       </h4>
     </ng-container>
+
+    <!-- UtensilsList in screen -->
+
     <div *ngFor="let category of utensilsCategoryList">
-      <h3>{{ category.label }}</h3>
-      <ng-container *ngFor="let item of utensilsItems">
-        <div *ngIf="category.category === item.category">
-          <p>{{ item.label }}</p>
-        </div>
-      </ng-container>
+      <h3 (click)="toggleDisplayItens(category)">
+        {{ category.label }}
+      </h3>
+      <div *ngIf="category.displayItems">
+        <ng-container *ngFor="let item of utensilsItems">
+          <div
+            *ngIf="category.category === item.category"
+            class="utensils-itens my-3"
+          >
+            <p>{{ item.label }}</p>
+            <div>
+              <img [src]="item.image" alt="" />
+            </div>
+          </div>
+        </ng-container>
+      </div>
     </div>
 
     <h3 class="back" routerLink="">Voltar</h3>

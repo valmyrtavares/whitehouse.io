@@ -7,6 +7,7 @@ interface Category {
   category: string;
   label: string;
   displayItems: boolean;
+  id: string;
 }
 
 @Component({
@@ -28,17 +29,16 @@ export class UtensilsComponent {
     this.utensilsItems = this.data.utensils;
     this.fetchCategoryList('utensilCategories');
     this.fetchCategoryList('utensils');
+    console.log(this.utensilsItems);
   }
 
   fetchCategoryList(data: string) {
     this.newApi.getData(data).subscribe((res: []) => {
       if (data === 'utensils') {
         this.utensilsItems = res;
-        console.log(this.utensilsItems);
       }
       if (data === 'utensilCategories') {
         this.utensilsCategoryList = res;
-        console.log(this.utensilsCategoryList);
       }
     });
   }
@@ -62,5 +62,13 @@ export class UtensilsComponent {
   }
   onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
+  }
+  toggleDisplayItens(data: Category) {
+    this.utensilsCategoryList.forEach((item) => {
+      if (item.id === data.id) {
+        item.displayItems = !data.displayItems;
+      }
+    });
+    console.log(this.utensilsCategoryList);
   }
 }
