@@ -69,4 +69,7 @@ export class PromotionFormComponent implements OnInit {
   toggleCreateForm() {
     this.createForm = !this.createForm;
   }
+  hiddenEditModasl() {
+    this.editField = false;
+  }
 }

@@ -16,4 +16,7 @@ export class CreationPromotionComponent {
     this.newApi.createCollection('promotions', form.value);
     this.parentFunction.emit();
   }
+  closeCreateModal() {
+    this.parentFunction.emit();
+  }
 }

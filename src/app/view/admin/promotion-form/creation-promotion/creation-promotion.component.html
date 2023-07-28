@@ -1,4 +1,6 @@
-<div class="container mt-5">
+<div class="container createform-promotion mt-5">
+  <button class="close-btn" (click)="closeCreateModal()">X</button>
+  <h3>Edite a sua promoção</h3>
   <form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Titulo </label>
@@ -19,7 +21,6 @@
         ngModel
       ></textarea>
     </div>
-
     <div class="col-auto">
       <button type="submit" class="btn btn-primary mb-3">Enviar</button>
     </div>
