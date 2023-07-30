@@ -32,7 +32,7 @@ export class UtensilsFormComponent implements OnInit {
   ) {}
 
   editUtensil(id: string) {
-    this.editUtensils = true;
+    this.toggleCreateForm('edit');
     this.utensilEditObj = this.utensilsList.find((item) => {
       return item.id === id;
     });
@@ -82,11 +82,18 @@ export class UtensilsFormComponent implements OnInit {
   toggleCreateForm(data: string) {
     if (data === 'add') {
       this.createUtensils = !this.createUtensils;
+      if (this.createUtensils === true) {
+        this.editUtensils = false;
+      }
     }
     if (data === 'edit') {
       this.editUtensils = !this.editUtensils;
+      if (this.editUtensils === true) {
+        this.createUtensils = false;
+      }
     }
   }
+
   onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
   }

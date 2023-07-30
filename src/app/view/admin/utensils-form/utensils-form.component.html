@@ -10,6 +10,7 @@
   <!-- Search component -->
   <taba-search (searchTextChanged)="onSearchTextEntered($event)"></taba-search>
 
+  <!-- list search items-->
   <ng-container *ngFor="let item of utensilsList">
     <div
       *ngIf="
@@ -26,17 +27,31 @@
       </button>
     </div>
   </ng-container>
+  <div>
+    <button
+      type="button"
+      class="btn btn-primary rounded-circle mt-5"
+      (click)="toggleCreateForm('add')"
+    >
+      +
+    </button>
+  </div>
 
-  <ng-container *ngIf="createUtensils">
-    <taba-add-edit
-      [title]="titleAdd"
-      [utensilEditObj]=""
-      [utensilsCategoryList]="utensilsCategoryList"
-      (parentFunction)="parentFunction($event)"
-      (closeModal)="toggleCreateForm($event)"
-      [typeOfData]="'add'"
-    ></taba-add-edit>
-  </ng-container>
+  <!-- Add item -->
+  <div class="position-modal">
+    <ng-container *ngIf="createUtensils">
+      <taba-add-edit
+        [title]="titleAdd"
+        [utensilEditObj]=""
+        [utensilsCategoryList]="utensilsCategoryList"
+        (parentFunction)="parentFunction($event)"
+        (closeModal)="toggleCreateForm($event)"
+        [typeOfData]="'add'"
+      ></taba-add-edit>
+    </ng-container>
+  </div>
+
+  <!-- List of items -->
   <ng-container *ngFor="let item of utensilsList">
     <div class="utensil-list my-3">
       <p>{{ item.label }}</p>
@@ -48,25 +63,20 @@
       </button>
     </div>
   </ng-container>
+
+  <!-- Edit item -->
   <ng-container *ngIf="editUtensils">
-    <taba-add-edit
-      [title]="titleEdit"
-      [utensilEditObj]="utensilEditObj"
-      [utensilsCategoryList]="utensilsCategoryList"
-      [typeOfData]="'edit'"
-      (parentFunction)="parentFunction($event)"
-      (closeModal)="toggleCreateForm($event)"
-    ></taba-add-edit>
+    <div class="position-modal">
+      <taba-add-edit
+        [title]="titleEdit"
+        [utensilEditObj]="utensilEditObj"
+        [utensilsCategoryList]="utensilsCategoryList"
+        [typeOfData]="'edit'"
+        (parentFunction)="parentFunction($event)"
+        (closeModal)="toggleCreateForm($event)"
+      ></taba-add-edit>
+    </div>
   </ng-container>
-  <div>
-    <button
-      type="button"
-      class="btn btn-primary rounded-circle mt-5"
-      (click)="toggleCreateForm('add')"
-    >
-      +
-    </button>
-  </div>
 </div>
 <ng-template #nodisplay>
   <taba-category-utensils-form></taba-category-utensils-form>
