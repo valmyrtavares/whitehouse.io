@@ -97,4 +97,8 @@ export class UtensilsFormComponent implements OnInit {
   onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
   }
+
+  closeModalCategory(data: boolean) {
+    this.createCategory = data;
+  }
 }

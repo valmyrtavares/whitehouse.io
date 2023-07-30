@@ -1,4 +1,7 @@
 <div class="container mt-5">
+  <div class="close-btn">
+    <button (click)="closeForm()">X</button>
+  </div>
   <form #f="ngForm" (ngSubmit)="onSubmit(f)">
     <input
       type="hidden"

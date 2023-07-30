@@ -7,3 +7,20 @@
     font-size: 27px;
     color: #4490EE;    
     }
+    .close-btn{
+        position: relative;
+        top:-8px;
+        right: -50px;
+        width: 100%;
+        button{
+            position: relative;
+            right: 70px;
+            background: transparent;
+            float: right;
+            border: none;
+            outline: none;
+            color: black;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    }

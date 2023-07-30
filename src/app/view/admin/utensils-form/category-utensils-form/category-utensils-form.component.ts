@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { ApiRealtimeDatabaseService } from 'src/app/mock/api-realtime-database.service';
 import { UsefulFunctionsService } from 'src/app/mock/useful-functions.service';
@@ -10,6 +10,8 @@ import { utensilsCategory, utensilsCateroryEdit } from 'src/app/model/models';
   styleUrls: ['./category-utensils-form.component.scss'],
 })
 export class CategoryUtensilsFormComponent implements OnInit {
+  @Output() closeModal = new EventEmitter<boolean>();
+
   displayItems: boolean = false;
   utensilsCategoryList: utensilsCateroryEdit[];
   currentId: string;
@@ -55,6 +57,9 @@ export class CategoryUtensilsFormComponent implements OnInit {
 
     form.reset();
     this.displayEditForm = false;
+  }
+  closeForm() {
+    this.closeModal.emit(true);
   }
 
   onSubmit(form: NgForm) {

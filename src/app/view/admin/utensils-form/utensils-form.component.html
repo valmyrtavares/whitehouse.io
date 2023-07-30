@@ -79,5 +79,7 @@
   </ng-container>
 </div>
 <ng-template #nodisplay>
-  <taba-category-utensils-form></taba-category-utensils-form>
+  <taba-category-utensils-form
+    (closeModal)="closeModalCategory($event)"
+  ></taba-category-utensils-form>
 </ng-template>
