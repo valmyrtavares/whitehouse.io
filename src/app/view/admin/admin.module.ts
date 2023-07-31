@@ -11,9 +11,10 @@ import { CustomerModule } from './customer-reporter-form/customer.module';
 
 import { UtensilsModule } from './utensils-form/utensils.module';
 import { PromotionModule } from './promotion-form/promotion.module';
+import { LoginComponent } from './login/login.component';
 
 @NgModule({
-  declarations: [FormMenuComponent, MenuIconFormComponent],
+  declarations: [FormMenuComponent, MenuIconFormComponent, LoginComponent],
   imports: [
     CommonModule,
     ComponentModule,

@@ -4,6 +4,7 @@ import { Injectable } from '@angular/core';
   providedIn: 'root',
 })
 export class UsefulFunctionsService {
+  auth: boolean = false;
   transformUrl(originalUrl: string): string {
     if (originalUrl.includes('/view?usp=drive_link')) {
       let modifiedUrl = originalUrl.replace(
@@ -35,5 +36,4 @@ export class UsefulFunctionsService {
       return data.toLowerCase();
     }
   }
-  constructor() {}
 }

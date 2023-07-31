@@ -10,6 +10,8 @@ import { CustomerReporterFormComponent } from './view/admin/customer-reporter-fo
 import { PromotionFormComponent } from './view/admin/promotion-form/promotion-form.component';
 import { MenuIconFormComponent } from './view/admin/menu-icon-form/menu-icon-form.component';
 import { UtensilsFormComponent } from './view/admin/utensils-form/utensils-form.component';
+import { AdminGuardService } from './mock/admin-guard.service';
+import { LoginComponent } from './view/admin/login/login.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -20,7 +22,12 @@ const routes: Routes = [
     path: 'places-form',
     component: EnvironmentImagesComponent,
   },
-  { path: 'menu-form', component: FormMenuComponent },
+  { path: 'login', component: LoginComponent },
+  {
+    path: 'menu-form',
+    component: FormMenuComponent,
+    canActivate: [AdminGuardService],
+  },
   { path: 'customer-form', component: CustomerReporterFormComponent },
   { path: 'form-promotion', component: PromotionFormComponent },
   { path: 'form-icon-menu', component: MenuIconFormComponent },

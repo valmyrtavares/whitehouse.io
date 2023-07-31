@@ -1,5 +1,5 @@
 /* You can add global styles to this file, and also import other style files */
-.back{   
+   .back{   
     text-align: center;
     font-weight: bold;
     margin: 4px;
@@ -23,4 +23,11 @@
             font-size: 20px;
             cursor: pointer;
         }
+    }
+    .position-modal{
+        position: absolute;
+        top: 18%;  
+        background-color: #fbf4f4;
+        padding: 10px;
+        border-radius: 20px;
     }
