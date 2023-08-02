@@ -21,7 +21,7 @@
         
     }
     
-    @media(max-width:600px){
+    // @media(max-width:600px){
         .content_home ul{
             display: none;
         }
@@ -32,7 +32,7 @@
             background: none;
             border: none;  
         }
-    }
+    // }
     
     }
     .menu-movel{
@@ -45,7 +45,7 @@
         }
         min-height: 40%;
         background:white;
-        width: 50%;
+        //width: 50%;
         z-index: 10;
         position: fixed;
         top: 30px;

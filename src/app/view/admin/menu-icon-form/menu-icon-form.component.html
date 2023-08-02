@@ -1,11 +1,7 @@
 <div class="container taba-menu-form">
-  <div class="container mt-5" [hidden]="!editField">
+  <div class="position-modal" [hidden]="!editField">
     <button class="close-btn" (click)="showModel()">X</button>
-    <form
-      #productEdit="ngForm"
-      class="form-update"
-      (ngSubmit)="onEdit(productEdit.value)"
-    >
+    <form #productEdit="ngForm" (ngSubmit)="onEdit(productEdit.value)">
       <input type="hidden" name="comment" ngModel class="form-control" />
       <input type="hidden" name="route" ngModel class="form-control" />
       <div class="mb-3">
@@ -27,7 +23,9 @@
     <div class="card-image">
       <img [src]="item.image" alt="" />
       <p>{{ item.label }}</p>
-      <button (click)="onEditClicked(item.id)">Editar</button>
+      <button class="btn btn-primary" (click)="onEditClicked(item.id)">
+        Editar
+      </button>
     </div>
   </ng-container>
 </div>
