@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { AfterViewInit, Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MockService } from '../../mock/mock.service';
 import { ApiService } from '../../mock/api.service';
@@ -13,7 +13,7 @@ import {
   templateUrl: './showcase.component.html',
   styleUrls: ['./showcase.component.scss'],
 })
-export class ShowcaseComponent {
+export class ShowcaseComponent implements OnInit, AfterViewInit {
   id: string;
   imagesData: any; //environementPropertyPlaces[] | customerReporters[];
   imagesDataFiltered: environementPropertyPlaces[] | customerReporters[];
@@ -26,13 +26,20 @@ export class ShowcaseComponent {
     this.id = this.route.snapshot.params['id'];
   }
 
-  ngOnInit() {
+  ngOnInit(): void {
+    this.fetchImages();
+  }
+  ngAfterViewInit(): void {
+    // this.fetchImages();
+  }
+
+  fetchImages() {
     if (
       this.id === 'firstCustomer' ||
       this.id === 'secondCustomer' ||
       this.id === 'thirdCustomer'
     ) {
-      this.api.getData('customersReporters').subscribe((data) => {
+      this.newApi.getData('customersReporters').subscribe((data) => {
         this.imagesData = data;
         this.filterData(this.imagesData);
       });
@@ -42,7 +49,6 @@ export class ShowcaseComponent {
       this.newApi.getData('environementPropertyPlaces').subscribe((data) => {
         this.imagesData = data;
         console.log(data);
-
         this.filterData(this.imagesData);
       });
     }

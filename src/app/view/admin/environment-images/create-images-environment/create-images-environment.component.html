@@ -17,7 +17,7 @@
       <option value="suíteRoom">Suite 1</option>
       <option value="livingRoom">Sala</option>
       <option value="kitchen">Cozinha</option>
-      <option value="livingRoom">Piscina</option>
+      <option value="swimmingPool">Piscina</option>
       <option value="garden">Jardins</option>
       <option value="barbecueArea">Churrasco</option>
       <option value="pizzaArea">Pizza</option>
@@ -36,7 +36,19 @@
       id="exampleFormControlInput1"
     />
   </div>
+
   <div class="col-auto">
     <button type="submit" class="btn btn-primary mb-3">Enviar</button>
   </div>
 </form>
+<div class="form-check my-5">
+  <input
+    class="form-check-input"
+    type="checkbox"
+    [(ngModel)]="stayOnThePage"
+    id="flexCheckIndeterminate"
+  />
+  <label class="form-check-label" for="flexCheckIndeterminate">
+    Mantenha preenchido para não sair da tela
+  </label>
+</div>

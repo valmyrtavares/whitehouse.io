@@ -11,6 +11,7 @@ import { ApiRealtimeDatabaseService } from 'src/app/mock/api-realtime-database.s
 import {
   environmentPropetyModel,
   customerReporters,
+  articles,
 } from 'src/app/model/models';
 
 // import { Router, NavigationEnd } from '@angular/router';
@@ -25,6 +26,7 @@ export class HomeComponent implements OnInit {
   booking: string = 'Faça a sua reserva';
   customersReporters: customerReporters[];
   homeUtensils: string[];
+  articles: environmentPropetyModel[];
 
   // @ViewChild('section1Element') section1Element: ElementRef;
 
@@ -40,6 +42,7 @@ export class HomeComponent implements OnInit {
     // this.dataEnvironementProperty = this.data.environementProperty;
     this.customersReporters = this.data.customersReporters;
     this.homeUtensils = this.data.mockData;
+    this.articles = this.data.articles;
 
     // this.api.getData('environmentProperty').subscribe((environmentProperty) => {
     //   this.apiEnvironmentProperty = environmentProperty;

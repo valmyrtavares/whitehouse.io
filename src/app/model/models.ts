@@ -40,6 +40,11 @@ export interface promotions {
   title: string;
   comment: string;
 }
+export interface articles {
+  label: string;
+  comment: string;
+  image: string;
+}
 export interface promotionsEdit {
   id: string;
   title: string;

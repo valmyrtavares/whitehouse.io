@@ -1,10 +1,13 @@
 <div class="container taba-environment-form">
   <div *ngIf="createNewEnviromentImages">
-    <taba-create-images-environment></taba-create-images-environment>
+    <taba-create-images-environment
+      (parentFunction)="parentFunction()"
+    ></taba-create-images-environment>
   </div>
 
   <!-- All images environements -->
-  <div *ngFor="let item of environmentImagesformData">
+
+  <ng-container *ngFor="let item of environmentImagesformData">
     <div class="image-form-wrapper">
       <div class="image-form"><img [src]="item.image" alt="" /></div>
       <button class="btn btn-danger" (click)="deleteImage(item.id)">
@@ -14,12 +17,15 @@
         Editar
       </button>
     </div>
-  </div>
+  </ng-container>
 </div>
 
 <!-- Edit form -->
-<div class="edit_field" [hidden]="editField">
-  <form #productEdit="ngForm" (ngSubmit)="onEdit(productEdit.value)">
+<div class="position-modal" [hidden]="editField">
+  <div class="close-btn">
+    <button (click)="closeFormEdit()">X</button>
+  </div>
+  <form #productEdit="ngForm" (ngSubmit)="onEdit(productEdit)">
     <input type="hidden" name="comment" ngModel />
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label"
@@ -63,4 +69,15 @@
       <button type="submit" class="btn btn-primary mb-3">Enviar</button>
     </div>
   </form>
+  <div class="form-check my-5">
+    <input
+      class="form-check-input"
+      type="checkbox"
+      [(ngModel)]="stayOnThePage"
+      id="flexCheckIndeterminate"
+    />
+    <label class="form-check-label" for="flexCheckIndeterminate">
+      Mantenha preenchido para não sair da tela
+    </label>
+  </div>
 </div>

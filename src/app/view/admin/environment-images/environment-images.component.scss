@@ -1,17 +1,22 @@
-.taba-environment-form{
-    height: 80vh;
-    margin-top:100px;
-    .image-form-wrapper{
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        .image-form{
-            max-width: 100px;
-            img{
-                width: 100%;            
+.taba-environment-form{    
+   
+       
+        .image-form-wrapper{
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            .image-form{
+                max-width: 100px;
+                max-height: 100px;
+                overflow: hidden;
+                margin-bottom: 5px;
+                img{
+                    width: 100%;   
+                    object-fit: cover;         
+                }
             }
         }
-    }
+    
 }
 .edit_field{
     position: absolute;
