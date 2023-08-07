@@ -1,0 +1,17 @@
+.highlight_image {
+    background-color: aliceblue;
+    box-shadow: 10px 10px 20px black;
+    max-width: 70%;
+    max-height: 50%;
+    position: fixed;
+    top: 20%;
+    left: 15%;
+
+    img{
+        width: 100%;
+        object-fit: cover;     
+    }
+}
+.teste_hifen{
+    color:red;
+}

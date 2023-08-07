@@ -9,6 +9,7 @@ import { UtensilsComponent } from './utensils/utensils.component';
 import { HomeComponent } from './home/home.component';
 import { MockUtensilsComponent } from './home/mock-utensils/mock-utensils.component';
 import { AppRoutingModule } from '../app-routing.module';
+import { ImageModalComponent } from './utensils/image-modal/image-modal.component';
 
 //Components
 
@@ -20,6 +21,7 @@ import { AppRoutingModule } from '../app-routing.module';
     UtensilsComponent,
     HomeComponent,
     MockUtensilsComponent,
+    ImageModalComponent,
   ],
   imports: [CommonModule, FormsModule, AppRoutingModule, ComponentModule],
   exports: [FooterComponent],

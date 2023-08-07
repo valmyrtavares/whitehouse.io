@@ -19,6 +19,7 @@ export class UtensilsComponent {
   utensilsItems: utensil[];
   utensilsCategoryList: Category[];
   searchText: string = '';
+  highlightImage: string;
 
   constructor(
     private data: MockService,
@@ -29,7 +30,7 @@ export class UtensilsComponent {
     this.utensilsItems = this.data.utensils;
     this.fetchCategoryList('utensilCategories');
     this.fetchCategoryList('utensils');
-    console.log(this.utensilsItems);
+    this.highlightImage = '';
   }
 
   fetchCategoryList(data: string) {
@@ -70,5 +71,8 @@ export class UtensilsComponent {
       }
     });
     console.log(this.utensilsCategoryList);
+  }
+  showItem(data: string) {
+    this.highlightImage = data;
   }
 }
