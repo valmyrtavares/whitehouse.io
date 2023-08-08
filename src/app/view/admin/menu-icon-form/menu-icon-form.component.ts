@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { ApiRealtimeDatabaseService } from 'src/app/mock/api-realtime-database.service';
 import { environmentPropetyModelEdit } from 'src/app/model/models';
 import { NgForm } from '@angular/forms';
+import { UsefulFunctionsService } from 'src/app/mock/useful-functions.service';
 
 @Component({
   selector: 'app-menu-icon-form',
@@ -15,7 +16,10 @@ export class MenuIconFormComponent implements OnInit {
 
   @ViewChild('productEdit', { static: false }) form: NgForm;
 
-  constructor(private newApi: ApiRealtimeDatabaseService) {}
+  constructor(
+    private newApi: ApiRealtimeDatabaseService,
+    private imageChange: UsefulFunctionsService
+  ) {}
 
   ngOnInit() {
     this.fetchEnvironmentPromotions('environementProperty');
@@ -47,9 +51,10 @@ export class MenuIconFormComponent implements OnInit {
   }
 
   onEdit(form: NgForm) {
+    form.value.image = this.imageChange.transformUrl(form.value.image);
+    form.value.image;
     this.editField = false;
-    console.log(form);
-    this.newApi.updateImage('environementProperty', this.currentId, form);
+    this.newApi.updateImage('environementProperty', this.currentId, form.value);
     setTimeout(() => {
       this.fetchEnvironmentPromotions('environementProperty');
     }, 1000);

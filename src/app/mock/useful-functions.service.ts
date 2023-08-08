@@ -5,13 +5,18 @@ import { Injectable } from '@angular/core';
 })
 export class UsefulFunctionsService {
   auth: boolean = false;
+
   transformUrl(originalUrl: string): string {
-    if (originalUrl.includes('/view?usp=drive_link')) {
+    if (
+      originalUrl.includes('/view?usp=drive_link') ||
+      originalUrl.includes('/view?usp=sharing')
+    ) {
       let modifiedUrl = originalUrl.replace(
         /\/file\/d\//,
         '/uc?export=download&id='
       );
       modifiedUrl = modifiedUrl.replace(/\/view\?usp=drive_link$/, '');
+      modifiedUrl = modifiedUrl.replace(/\/view\??usp=sharing$/, '');
       return modifiedUrl;
     } else {
       return originalUrl;

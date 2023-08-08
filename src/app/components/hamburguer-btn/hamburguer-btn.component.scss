@@ -10,8 +10,7 @@
         z-index: 10;
         content: '';
         width: 42px;
-        height: 5px;
-        //display: inline-block;
+        height: 5px;        
         background: black;
         margin-right: 4px;
         box-shadow: 0 11px black, 0 -11px black;
@@ -21,7 +20,7 @@
         
     }
     
-    // @media(max-width:600px){
+   
         .content_home ul{
             display: none;
         }
@@ -32,7 +31,7 @@
             background: none;
             border: none;  
         }
-    // }
+  
     
     }
     .menu-movel{
@@ -44,8 +43,7 @@
             
         }
         min-height: 40%;
-        background:white;
-        //width: 50%;
+        background:white;       
         z-index: 10;
         position: fixed;
         top: 30px;
@@ -59,7 +57,7 @@
             flex-direction: column;
             justify-content: space-around;
             li{
-                font-family: Ink Free;
+                font-family:arial;
                 color: #4490EE;
                 font-size: 23px;
                 cursor: pointer;
