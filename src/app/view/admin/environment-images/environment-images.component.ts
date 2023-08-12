@@ -102,9 +102,8 @@ export class EnvironmentImagesComponent {
     this.editField = true;
   }
   parentFunction() {
-    setInterval(() => {
+    setTimeout(() => {
       this.fetchEnvironmentImages();
     }, 1000);
   }
 }
-//https://drive.google.com/uc?export=download&id=14e31F_GqqfCIlw5ULIVbOFYl_bYcPSeq
