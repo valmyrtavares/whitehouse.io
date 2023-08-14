@@ -43,7 +43,7 @@ export class ShowcaseComponent implements OnInit, AfterViewInit {
         this.imagesData = data;
         this.filterData(this.imagesData);
       });
-      this.filterData(this.imagesData);
+      //this.filterData(this.imagesData); there were two seconds customers
     } else {
       // this.imagesData = this.data.environementPropertyPlaces;
       this.newApi.getData('environementPropertyPlaces').subscribe((data) => {
