@@ -1,7 +1,16 @@
-<div class="container taba-showcase">
-  <div *ngFor="let item of imagesDataFiltered">
-    <img [src]="item.image" alt="" />
-    <p>{{ item.comment }}</p>
-  </div>
-  <h3 routerLink="">Voltar</h3>
+<div
+  *ngIf="!imagesDataFiltered; else waitingLoad"
+  class="spinner-border text-primary load"
+  role="status"
+>
+  <span class="visually-hidden">Loading...</span>
 </div>
+
+<ng-template #waitingLoad>
+  <div class="container taba-showcase">
+    <div *ngFor="let item of imagesDataFiltered">
+      <img [src]="item.image" alt="" />
+    </div>
+    <h3 routerLink="">Voltar</h3>
+  </div>
+</ng-template>

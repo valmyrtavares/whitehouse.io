@@ -9,12 +9,19 @@
     }
 
     h3{
+        position: fixed;
+        top: 86%;
+        left: 36%;
+        z-index: 100;
         text-align: center;     
         font-weight: bold;
         margin: 4px;      
         font-family: 'Patrick Hand', cursive;
         font-size: 27px;
         color:#4490EE;
+        box-shadow: 10px 10px 20px black;
+        background-color:transparent;
+        padding:7px 13px;
         cursor: pointer;
     }
     p{
@@ -25,3 +32,9 @@
         font-size: 16px;
     }
 }
+.load{
+    position: absolute;
+    top: 44%;   
+    left: 50%;
+}
+// class="spinner-border load" role="status"

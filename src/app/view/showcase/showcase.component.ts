@@ -1,4 +1,10 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import {
+  AfterViewInit,
+  Component,
+  OnInit,
+  TemplateRef,
+  ViewChild,
+} from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MockService } from '../../mock/mock.service';
 import { ApiService } from '../../mock/api.service';
@@ -14,6 +20,7 @@ import {
   styleUrls: ['./showcase.component.scss'],
 })
 export class ShowcaseComponent implements OnInit, AfterViewInit {
+  @ViewChild('waitingLoad') waitingLoad: TemplateRef<string>;
   id: string;
   imagesData: any; //environementPropertyPlaces[] | customerReporters[];
   imagesDataFiltered: environementPropertyPlaces[] | customerReporters[];
@@ -27,7 +34,9 @@ export class ShowcaseComponent implements OnInit, AfterViewInit {
   }
 
   ngOnInit(): void {
-    this.fetchImages();
+    setTimeout(() => {
+      this.fetchImages();
+    }, 1000);
   }
   ngAfterViewInit(): void {
     // this.fetchImages();
