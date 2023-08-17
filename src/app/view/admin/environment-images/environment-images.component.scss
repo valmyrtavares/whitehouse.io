@@ -1,8 +1,19 @@
 .taba-environment-form{   
-  
+  margin-top: 150px;
    top: 100px;
     .environment-list{
         width: 100%;
+        .btn-add{
+            display:flex;
+            align-items: center;
+            justify-content: space-between;
+            p{
+                margin:35px;
+                font-family:Ink Free;
+                color:#4490EE;                 
+                 font-size:22px
+            }
+        }
         .image-form-wrapper{
             display: flex;
             justify-content: space-between;
