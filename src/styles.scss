@@ -25,9 +25,12 @@
         }
     }
     .position-modal{
-        position: absolute;
-        top: 18%;  
-        background-color: #fbf4f4;
-        padding: 10px;
+        position: fixed;
+        max-width: 90%;
+        left: 5%;
+        top: 18%;
+        box-shadow: 10px 10px 20px black;
+        background-color: #ffffff;
+        padding: 20px;
         border-radius: 20px;
     }

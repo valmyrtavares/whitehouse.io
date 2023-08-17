@@ -17,7 +17,7 @@ import { UsefulFunctionsService } from 'src/app/mock/useful-functions.service';
 })
 export class EnvironmentImagesComponent {
   //variables
-  createNewEnviromentImages: boolean = true;
+  createNewEnviromentImages: boolean = false;
   environmentImagesformData: any;
   editField: boolean = true;
   currentId: string = '';
@@ -102,8 +102,12 @@ export class EnvironmentImagesComponent {
     this.editField = true;
   }
   parentFunction() {
+    this.createNewEnviromentImages = false;
     setTimeout(() => {
       this.fetchEnvironmentImages();
     }, 1000);
+  }
+  openCreateForm() {
+    this.createNewEnviromentImages = true;
   }
 }

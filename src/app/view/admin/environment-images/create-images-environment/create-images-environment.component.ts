@@ -24,6 +24,9 @@ export class CreateImagesEnvironmentComponent {
     category: '',
     image: '',
   };
+  closeFormCreate() {
+    this.parentFunction.emit();
+  }
 
   onSubmit(form: NgForm) {
     form.value.image = this.url.transformUrl(form.value.image);
@@ -37,4 +40,3 @@ export class CreateImagesEnvironmentComponent {
     });
   }
 }
-//            https://www.cp4.com.br/wp-content/uploads/2019/02/Paris.jpg

@@ -1,6 +1,8 @@
-.taba-environment-form{    
-   
-       
+.taba-environment-form{   
+  
+   top: 100px;
+    .environment-list{
+        width: 100%;
         .image-form-wrapper{
             display: flex;
             justify-content: space-between;
@@ -16,6 +18,7 @@
                 }
             }
         }
+    }
     
 }
 .edit_field{

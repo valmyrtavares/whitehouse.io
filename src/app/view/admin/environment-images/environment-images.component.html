@@ -1,83 +1,91 @@
-<div class="container taba-environment-form">
-  <div *ngIf="createNewEnviromentImages">
+<div class="taba-environment-form">
+  <div *ngIf="createNewEnviromentImages" class="position-modal">
     <taba-create-images-environment
       (parentFunction)="parentFunction()"
     ></taba-create-images-environment>
   </div>
+  <div class="environment-list">
+    <button
+      type="button"
+      class="btn btn-primary rounded-circle mt-5"
+      (click)="openCreateForm()"
+    >
+      +
+    </button>
+    <!-- All images environements -->
 
-  <!-- All images environements -->
-
-  <ng-container *ngFor="let item of environmentImagesformData">
-    <div class="image-form-wrapper">
-      <div class="image-form"><img [src]="item.image" alt="" /></div>
-      <button class="btn btn-danger" (click)="deleteImage(item.id)">
-        Excluir
-      </button>
-      <button class="btn btn-primary" (click)="onEditClicked(item.id)">
-        Editar
-      </button>
-    </div>
-  </ng-container>
-</div>
-
-<!-- Edit form -->
-<div class="position-modal" [hidden]="editField">
-  <div class="close-btn">
-    <button (click)="closeFormEdit()">X</button>
+    <ng-container *ngFor="let item of environmentImagesformData">
+      <div class="image-form-wrapper">
+        <div class="image-form"><img [src]="item.image" alt="" /></div>
+        <button class="btn btn-danger" (click)="deleteImage(item.id)">
+          Excluir
+        </button>
+        <button class="btn btn-primary" (click)="onEditClicked(item.id)">
+          Editar
+        </button>
+      </div>
+    </ng-container>
   </div>
-  <form #productEdit="ngForm" (ngSubmit)="onEdit(productEdit)">
-    <input type="hidden" name="comment" ngModel />
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label"
-        >Editar Categoria das imagens
-      </label>
-      <select
-        class="form-select"
-        name="category"
-        id="category"
-        ngModel
-        aria-label="Default select example"
-      >
-        <option selected>Escolha o local da sua imagem</option>
-        <option value="frontHome">Fachada</option>
-        <option value="suíteRoom">Suite 1</option>
-        <option value="livingRoom">Sala</option>
-        <option value="kitchen">Cozinha</option>
-        <option value="livingRoom">Piscina</option>
-        <option value="garden">Jardins</option>
-        <option value="barbecueArea">Churrasco</option>
-        <option value="pizzaArea">Pizza</option>
-        <option value="ranchoArea">Rancho</option>
-        <option value="aereo">Aéreo</option>
-        <option value="secondSuite">Suite 2</option>
-      </select>
+
+  <!-- Edit form -->
+  <div class="position-modal" [hidden]="editField">
+    <div class="close-btn">
+      <button (click)="closeFormEdit()">X</button>
     </div>
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label"
-        >Editar Imagem
-      </label>
+    <form #productEdit="ngForm" (ngSubmit)="onEdit(productEdit)">
+      <input type="hidden" name="comment" ngModel />
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Editar Categoria das imagens
+        </label>
+        <select
+          class="form-select"
+          name="category"
+          id="category"
+          ngModel
+          aria-label="Default select example"
+        >
+          <option selected>Escolha o local da sua imagem</option>
+          <option value="frontHome">Fachada</option>
+          <option value="suíteRoom">Suite 1</option>
+          <option value="livingRoom">Sala</option>
+          <option value="kitchen">Cozinha</option>
+          <option value="livingRoom">Piscina</option>
+          <option value="garden">Jardins</option>
+          <option value="barbecueArea">Churrasco</option>
+          <option value="pizzaArea">Pizza</option>
+          <option value="ranchoArea">Rancho</option>
+          <option value="aereo">Aéreo</option>
+          <option value="secondSuite">Suite 2</option>
+        </select>
+      </div>
+      <div class="mb-3">
+        <label for="exampleFormControlInput1" class="form-label"
+          >Editar Imagem
+        </label>
+        <input
+          type="text"
+          name="image"
+          id="image"
+          ngModel
+          class="form-control"
+          id="exampleFormControlInput1"
+        />
+      </div>
+      <div class="col-auto">
+        <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+      </div>
+    </form>
+    <div class="form-check my-5">
       <input
-        type="text"
-        name="image"
-        id="image"
-        ngModel
-        class="form-control"
-        id="exampleFormControlInput1"
+        class="form-check-input"
+        type="checkbox"
+        [(ngModel)]="stayOnThePage"
+        id="flexCheckIndeterminate"
       />
+      <label class="form-check-label" for="flexCheckIndeterminate">
+        Mantenha preenchido para não sair da tela
+      </label>
     </div>
-    <div class="col-auto">
-      <button type="submit" class="btn btn-primary mb-3">Enviar</button>
-    </div>
-  </form>
-  <div class="form-check my-5">
-    <input
-      class="form-check-input"
-      type="checkbox"
-      [(ngModel)]="stayOnThePage"
-      id="flexCheckIndeterminate"
-    />
-    <label class="form-check-label" for="flexCheckIndeterminate">
-      Mantenha preenchido para não sair da tela
-    </label>
   </div>
 </div>
