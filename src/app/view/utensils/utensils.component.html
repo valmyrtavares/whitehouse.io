@@ -1,3 +1,5 @@
+<!-- Modal that shows the enlarged image item -->
+
 <div class="taba-utensils">
   <ng-container *ngIf="highlightImage !== ''">
     <app-image-modal
@@ -5,25 +7,32 @@
       (closeImageUtensilsForm)="showItem($event)"
     ></app-image-modal>
   </ng-container>
+
+  <!-- Search Field -->
   <div>
     <taba-search
+      [highlightImage]="highlightImage"
       (searchTextChanged)="onSearchTextEntered($event)"
     ></taba-search>
     <ng-container *ngFor="let item of utensilsItems">
-      <h4
+      <div
+        class="utensils-itens my-3"
         *ngIf="
           searchText != '' &&
           item.label.toLowerCase().includes(searchText.toLowerCase())
         "
       >
         <p>{{ item.label }}</p>
-      </h4>
+        <div (click)="showItem(item.image)">
+          <img [src]="item.image" alt="" />
+        </div>
+      </div>
     </ng-container>
 
     <!-- UtensilsList in screen -->
 
     <div *ngFor="let category of utensilsCategoryList">
-      <h3 (click)="toggleDisplayItens(category)">
+      <h3 class="my-5" (click)="toggleDisplayItens(category)">
         {{ category.label }}
       </h3>
       <div *ngIf="category.displayItems">

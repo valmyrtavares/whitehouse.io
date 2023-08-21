@@ -1,10 +1,4 @@
-import {
-  AfterViewInit,
-  Component,
-  OnInit,
-  TemplateRef,
-  ViewChild,
-} from '@angular/core';
+import { Component, OnInit, TemplateRef, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { MockService } from '../../mock/mock.service';
 import { ApiService } from '../../mock/api.service';
@@ -19,11 +13,12 @@ import {
   templateUrl: './showcase.component.html',
   styleUrls: ['./showcase.component.scss'],
 })
-export class ShowcaseComponent implements OnInit, AfterViewInit {
+export class ShowcaseComponent implements OnInit {
   @ViewChild('waitingLoad') waitingLoad: TemplateRef<string>;
   id: string;
   imagesData: any; //environementPropertyPlaces[] | customerReporters[];
   imagesDataFiltered: environementPropertyPlaces[] | customerReporters[];
+  isCustomer: boolean = false;
   constructor(
     private route: ActivatedRoute,
     private data: MockService,
@@ -38,9 +33,9 @@ export class ShowcaseComponent implements OnInit, AfterViewInit {
       this.fetchImages();
     }, 1000);
   }
-  ngAfterViewInit(): void {
-    // this.fetchImages();
-  }
+  //ngAfterViewInit(): void {
+  // this.fetchImages();
+  // }
 
   fetchImages() {
     if (
@@ -50,6 +45,7 @@ export class ShowcaseComponent implements OnInit, AfterViewInit {
     ) {
       this.newApi.getData('customersReporters').subscribe((data) => {
         this.imagesData = data;
+        this.isCustomer = true;
         this.filterData(this.imagesData);
       });
       //this.filterData(this.imagesData); there were two seconds customers
@@ -57,7 +53,7 @@ export class ShowcaseComponent implements OnInit, AfterViewInit {
       // this.imagesData = this.data.environementPropertyPlaces;
       this.newApi.getData('environementPropertyPlaces').subscribe((data) => {
         this.imagesData = data;
-        console.log(data);
+        this.isCustomer = false;
         this.filterData(this.imagesData);
       });
     }

@@ -10,6 +10,7 @@
   <div class="container taba-showcase">
     <div *ngFor="let item of imagesDataFiltered">
       <img [src]="item.image" alt="" />
+      <p *ngIf="isCustomer">{{ item.comment }}</p>
     </div>
     <h3 routerLink="">Voltar</h3>
   </div>
