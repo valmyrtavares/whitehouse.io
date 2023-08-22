@@ -11,4 +11,5 @@ export class FormMenuComponent {
   promotion: string = 'Promoções';
   menuIconsHome: string = 'icones dos ambientes da casa';
   menuUtensilsHome: string = 'Cadastro de utenisílios';
+  menuArticles: string = 'Cadastre seus artigos';
 }

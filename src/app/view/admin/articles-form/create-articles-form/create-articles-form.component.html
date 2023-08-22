@@ -1,0 +1,58 @@
+<h3>{{ title }}</h3>
+<div class="close-btn">
+  <button (click)="closeFormCreate()">X</button>
+</div>
+<form #f="ngForm" (ngSubmit)="chooseEditOrAdd(f)">
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Titulo </label>
+    <input
+      type="text"
+      name="title"
+      [ngModel]="editableObj?.title"
+      class="form-control"
+      id="exampleFormControlInput1"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Pequeno texto
+    </label>
+    <input
+      type="text"
+      name="comment"
+      [ngModel]="editableObj?.comment"
+      class="form-control"
+      id="exampleFormControlInput1"
+    />
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label"
+      >Categoria dos artigos
+    </label>
+    <select
+      class="form-select"
+      name="category"
+      [ngModel]="editableObj?.category"
+      aria-label="Default select example"
+    >
+      <option selected>Escolha o local da sua imagem</option>
+      <option value="gastronomyArticle">Gastronomia</option>
+      <option value="toursArticle">Passeios</option>
+      <option value="internalAreaArticle">Nosso condomínio</option>
+    </select>
+  </div>
+  <div class="mb-3">
+    <label for="exampleFormControlInput1" class="form-label">Contato </label>
+    <input
+      type="text"
+      name="contact"
+      [ngModel]="editableObj?.contact"
+      class="form-control"
+      id="exampleFormControlInput1"
+    />
+  </div>
+
+  <div class="col-auto">
+    <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+  </div>
+</form>

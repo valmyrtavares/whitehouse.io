@@ -6,6 +6,7 @@ import { ApiRealtimeDatabaseService } from 'src/app/mock/api-realtime-database.s
 import {
   environementPropertyPlaces,
   customerReporters,
+  article,
 } from 'src/app/model/models';
 
 @Component({
@@ -17,8 +18,11 @@ export class ShowcaseComponent implements OnInit {
   @ViewChild('waitingLoad') waitingLoad: TemplateRef<string>;
   id: string;
   imagesData: any; //environementPropertyPlaces[] | customerReporters[];
-  imagesDataFiltered: environementPropertyPlaces[] | customerReporters[];
-  isCustomer: boolean = false;
+  imagesDataFiltered: any;
+
+  isCustomer: boolean = true;
+  dataKey: string;
+
   constructor(
     private route: ActivatedRoute,
     private data: MockService,
@@ -38,28 +42,31 @@ export class ShowcaseComponent implements OnInit {
   // }
 
   fetchImages() {
-    if (
-      this.id === 'firstCustomer' ||
-      this.id === 'secondCustomer' ||
-      this.id === 'thirdCustomer'
-    ) {
-      this.newApi.getData('customersReporters').subscribe((data) => {
-        this.imagesData = data;
-        this.isCustomer = true;
-        this.filterData(this.imagesData);
-      });
-      //this.filterData(this.imagesData); there were two seconds customers
-    } else {
-      // this.imagesData = this.data.environementPropertyPlaces;
-      this.newApi.getData('environementPropertyPlaces').subscribe((data) => {
-        this.imagesData = data;
-        this.isCustomer = false;
-        this.filterData(this.imagesData);
-      });
+    const arrayMappings = {
+      firstCustomer: 'customersReporters',
+      secondCustomer: 'customersReporters',
+      thirdCustomer: 'customersReporters',
+      gastronomyArticle: 'articles',
+      toursArticle: 'articles',
+      internalAreaArticle: 'articles',
+      default: 'environementPropertyPlaces',
+    };
+    this.dataKey = arrayMappings[this.id] || arrayMappings['default'];
+
+    if (this.dataKey === 'environementPropertyPlaces') {
+      this.isCustomer = false;
     }
+
+    this.newApi.getData(this.dataKey).subscribe((data) => {
+      this.imagesData = data;
+      this.filterData();
+    });
   }
 
-  filterData(data) {
-    this.imagesDataFiltered = data.filter((item) => item.category === this.id);
+  filterData() {
+    this.imagesDataFiltered = this.imagesData.filter(
+      (item) => item.category === this.id
+    );
   }
 }
+//857801483137  cip  59852525 senha

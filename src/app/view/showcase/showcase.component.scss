@@ -32,6 +32,35 @@
         font-size: 16px;
     }
 }
+.articles{
+    margin-top:200px;
+    padding: 5%;
+    div{
+        padding:2%;
+        border:solid 1px #4490EE;
+        border-radius: 10px;              
+        margin:4px;
+        span{
+            font-weight: bold;
+        }
+    }
+    h3{
+        position: fixed;
+        top: 86%;
+        left: 36%;
+        z-index: 100;
+        text-align: center;     
+        font-weight: bold;
+        margin: 4px;      
+        font-family: 'Patrick Hand', cursive;
+        font-size: 27px;
+        color:#4490EE;
+        box-shadow: 10px 10px 20px black;
+        background-color:transparent;
+        padding:7px 13px;
+        cursor: pointer;
+    }
+}
 .load{
     position: absolute;
     top: 44%;   

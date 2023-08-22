@@ -1,3 +1,4 @@
+<!-- open category modal button -->
 <div *ngIf="createCategory; else nodisplay">
   <button
     type="button"
@@ -27,14 +28,17 @@
       </button>
     </div>
   </ng-container>
-  <div>
+
+  <!-- Add button item -->
+  <div class="btn-add">
     <button
       type="button"
-      class="btn btn-primary rounded-circle mt-5"
+      class="btn btn-primary rounded-circle"
       (click)="toggleCreateForm('add')"
     >
       +
     </button>
+    <p>Adicione um novo item</p>
   </div>
 
   <!-- Add item -->
@@ -78,6 +82,8 @@
     </div>
   </ng-container>
 </div>
+
+<!-- modal create category -->
 <ng-template #nodisplay>
   <taba-category-utensils-form
     (closeModal)="closeModalCategory($event)"

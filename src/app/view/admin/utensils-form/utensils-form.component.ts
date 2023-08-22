@@ -22,10 +22,12 @@ export class UtensilsFormComponent implements OnInit {
   currentId: string;
 
   @ViewChild('nodisplay') nodisplay: TemplateRef<boolean>;
+
   ngOnInit() {
     this.fetchData('utensilCategories');
     this.fetchData('utensils');
   }
+
   constructor(
     private newApi: ApiRealtimeDatabaseService,
     private router: Router
@@ -48,10 +50,8 @@ export class UtensilsFormComponent implements OnInit {
     this.newApi.getData(data).subscribe((res: []) => {
       if (data === 'utensilCategories') {
         this.utensilsCategoryList = res;
-        console.log(this.utensilsCategoryList);
       } else if (data === 'utensils') {
         this.utensilsList = res;
-        console.log(this.utensilsList);
       }
     });
   }
@@ -79,15 +79,19 @@ export class UtensilsFormComponent implements OnInit {
       this.onEdit(data);
     }
   }
+
+  // function to choose what form to show
   toggleCreateForm(data: string) {
     if (data === 'add') {
       this.createUtensils = !this.createUtensils;
+      //this next if doesn´t allow to show both forms at the same time *
       if (this.createUtensils === true) {
         this.editUtensils = false;
       }
     }
     if (data === 'edit') {
       this.editUtensils = !this.editUtensils;
+      //*
       if (this.editUtensils === true) {
         this.createUtensils = false;
       }

@@ -7,10 +7,31 @@
 </div>
 
 <ng-template #waitingLoad>
-  <div class="container taba-showcase">
+  <div *ngIf="dataKey === 'customersReporters'" class="container taba-showcase">
     <div *ngFor="let item of imagesDataFiltered">
       <img [src]="item.image" alt="" />
       <p *ngIf="isCustomer">{{ item.comment }}</p>
+    </div>
+    <h3 routerLink="">Voltar</h3>
+  </div>
+  <div
+    *ngIf="dataKey === 'environementPropertyPlaces'"
+    class="container taba-showcase"
+  >
+    <div *ngFor="let item of imagesDataFiltered">
+      <img [src]="item.image" alt="" />
+    </div>
+    <h3 routerLink="">Voltar</h3>
+  </div>
+
+  <div class="articles" *ngIf="dataKey === 'articles'">
+    <div *ngFor="let item of imagesDataFiltered">
+      <h4>{{ item.title }}</h4>
+      <p>{{ item.comment }}</p>
+      <p>
+        contato:
+        <span>{{ item.contact }}</span>
+      </p>
     </div>
     <h3 routerLink="">Voltar</h3>
   </div>

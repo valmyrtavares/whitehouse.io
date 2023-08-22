@@ -63,18 +63,25 @@ export interface utensilEdit {
   id: string;
 }
 export interface environementPropertyPlacesEdit {
-  comment: '';
-  category: '';
-  image: '';
+  comment: string;
+  category: string;
+  image: string;
 }
 export interface utensilsCategory {
-  category: 'string';
-  diplayItems: 'string';
-  label: 'string';
+  category: string;
+  diplayItems: string;
+  label: string;
 }
 export interface utensilsCateroryEdit {
-  id: 'string';
-  category: 'string';
-  diplayItems: 'string';
-  label: 'string';
+  id: string;
+  category: string;
+  diplayItems: string;
+  label: string;
+}
+export interface article {
+  id: string;
+  category: string;
+  contact: string;
+  title: string;
+  comment: string;
 }

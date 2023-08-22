@@ -34,3 +34,17 @@
         padding: 20px;
         border-radius: 20px;
     }
+    .btn-add{
+        display:flex;
+        align-items: center;
+        justify-content: space-between;
+        p{
+            margin:35px;
+            font-family:Ink Free;
+            color:#4490EE;                 
+             font-size:22px
+        }
+    }
+    .min-margin{
+        margin: 1px
+    }

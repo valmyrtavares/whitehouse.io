@@ -12,6 +12,7 @@ import { MenuIconFormComponent } from './view/admin/menu-icon-form/menu-icon-for
 import { UtensilsFormComponent } from './view/admin/utensils-form/utensils-form.component';
 import { AdminGuardService } from './mock/admin-guard.service';
 import { LoginComponent } from './view/admin/login/login.component';
+import { ArticlesFormComponent } from './view/admin/articles-form/articles-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -32,6 +33,7 @@ const routes: Routes = [
   { path: 'form-promotion', component: PromotionFormComponent },
   { path: 'form-icon-menu', component: MenuIconFormComponent },
   { path: 'form-utensils', component: UtensilsFormComponent },
+  { path: 'form-articles', component: ArticlesFormComponent },
 ];
 
 @NgModule({

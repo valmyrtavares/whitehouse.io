@@ -1,0 +1,41 @@
+<div class="articles-form">
+  <!-- modal to add articles -->
+  <div class="position-modal" *ngIf="openCreateArticleModal">
+    <taba-create-articles-form
+      [title]="addArticelModaTitle"
+      (closeModal)="toggleCreateEditForm($event)"
+      [editableObj]=""
+      [typeForm]="'add'"
+    ></taba-create-articles-form>
+  </div>
+  <!-- modal to edit articles -->
+  <div class="position-modal" *ngIf="openEditArticleModal">
+    <taba-create-articles-form
+      [title]="editArticleModalTitle"
+      (closeModal)="toggleCreateEditForm($event)"
+      [editableObj]="editableObj"
+      [typeForm]="'edit'"
+    ></taba-create-articles-form>
+  </div>
+  <div>
+    <div class="btn-add">
+      <button
+        type="button"
+        class="btn btn-primary rounded-circle my-5"
+        (click)="toggleCreateEditForm('add')"
+      >
+        +
+      </button>
+      <p>Adicione um novo artigo</p>
+    </div>
+  </div>
+  <ng-container *ngFor="let item of articlesList">
+    <p>{{ item.title }}</p>
+    <button (click)="deleteArticle(item.id)" class="btn btn-danger mx-3">
+      Excluir
+    </button>
+    <button (click)="editArticle(item)" class="btn btn-warning mx-3">
+      Editar
+    </button>
+  </ng-container>
+</div>
