@@ -1,17 +1,30 @@
-<div *ngIf="!createForm; else nodisplay">
+<div class="btn-add form-promotion">
   <button
     type="button"
-    class="btn btn-primary rounded-circle mt-5"
+    class="btn btn-primary rounded-circle"
     (click)="toggleCreateForm()"
   >
     +
   </button>
+  <p>Adicione uma promoção</p>
 </div>
-<ng-template #nodisplay>
+<div *ngIf="createForm" class="position-modal">
   <taba-creation-promotion
-    (parentFunction)="toggleCreateForm()"
+    [title]="addPromotionModalTitle"
+    (parentFunction)="toggleCreateEditForm($event)"
+    [typeForm]="'add'"
+    [editableObj]=""
   ></taba-creation-promotion>
-</ng-template>
+</div>
+
+<div *ngIf="editForm" class="position-modal">
+  <taba-creation-promotion
+    [title]="editPromotionModalTitle"
+    (parentFunction)="toggleCreateEditForm($event)"
+    [typeForm]="'edit'"
+    [editableObj]="editableObj"
+  ></taba-creation-promotion>
+</div>
 
 ```
 <!-- List of promotions -->
@@ -22,40 +35,9 @@
       <button (click)="deletePromotion(item.id)" class="btn btn-danger mx-3">
         Excluir
       </button>
-      <button (click)="onEditClicked(item.id)" class="btn btn-primary mx-3">
+      <button (click)="onEditClicked(item)" class="btn btn-primary mx-3">
         Editar
       </button>
     </div>
   </ng-container>
-</div>
-
-<!-- EDIT PROMOTION -->
-<div class="container editform-promotion mt-5" [hidden]="!editField">
-  <button class="btn-close" (click)="hiddenEditModasl()">X</button>
-  <h3>Edite a sua promoção</h3>
-  <form #productEdit="ngForm" (ngSubmit)="onEdit(productEdit.value)">
-    <div class="mb-3">
-      <label for="exampleFormControlInput1" class="form-label">Titulo </label>
-      <input
-        type="text"
-        name="title"
-        ngModel
-        class="form-control"
-        id="exampleFormControlInput1"
-      />
-    </div>
-    <div class="mb-3">
-      <label>Comments</label>
-      <textarea
-        class="form-control progress"
-        style="height: 35vh"
-        name="comment"
-        ngModel
-      ></textarea>
-    </div>
-
-    <div class="col-auto">
-      <button type="submit" class="btn btn-primary mb-3">Enviar</button>
-    </div>
-  </form>
 </div>

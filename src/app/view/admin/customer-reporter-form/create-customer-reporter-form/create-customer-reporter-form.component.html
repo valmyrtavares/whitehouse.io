@@ -1,45 +1,50 @@
-<form #f="ngForm" (ngSubmit)="onSubmit(f)">
-  <input type="hidden" name="label" [ngModel]="customerReporter.label" />
-  <input type="hidden" name="id" [ngModel]="customerReporter.id" />
-  <input type="hidden" name="route" [ngModel]="customerReporter.route" />
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label"
-      >Categoria das imagens
-    </label>
-    <select
-      class="form-select"
-      name="category"
-      [ngModel]="customerReporter.category"
-      aria-label="Default select example"
-    >
-      <option [ngModel]="customerReporter.category" selected>
-        "" Escolha o local da sua imagem
-      </option>
-      <option value="firstCustomer">Primeiro Cliente</option>
-      <option value="secondCustomer">Segundo Cliente 1</option>
-      <option value="thirdCustomer">Terceiro Cliente</option>
-    </select>
-  </div>
-  <div class="mb-3">
-    <label for="exampleFormControlInput1" class="form-label">Imagem </label>
-    <input
-      type="text"
-      name="image"
-      [ngModel]="customerReporter.image"
-      class="form-control"
-      id="exampleFormControlInput1"
-    />
-  </div>
-  <div class="mb-3">
-    <label>Comments</label>
-    <textarea
-      class="form-control progress"
-      style="height: 35vh"
-      name="comment"
-      [ngModel]="customerReporter.comment"
-    ></textarea>
-  </div>
-  <div class="col-auto">
-    <button type="submit" class="btn btn-primary mb-3">Enviar</button>
-  </div>
-</form>
+<div class="close-btn mb-5">
+  <button (click)="closeForm()">X</button>
+</div>
+<div>
+  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+    <input type="hidden" name="label" [ngModel]="customerReporter.label" />
+    <input type="hidden" name="id" [ngModel]="customerReporter.id" />
+    <input type="hidden" name="route" [ngModel]="customerReporter.route" />
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label"
+        >Categoria das imagens
+      </label>
+      <select
+        class="form-select"
+        name="category"
+        [ngModel]="customerReporter.category"
+        aria-label="Default select example"
+      >
+        <option [ngModel]="customerReporter.category" selected>
+          "" Escolha o local da sua imagem
+        </option>
+        <option value="firstCustomer">Primeiro Cliente</option>
+        <option value="secondCustomer">Segundo Cliente 1</option>
+        <option value="thirdCustomer">Terceiro Cliente</option>
+      </select>
+    </div>
+    <div class="mb-3">
+      <label for="exampleFormControlInput1" class="form-label">Imagem </label>
+      <input
+        type="text"
+        name="image"
+        [ngModel]="customerReporter.image"
+        class="form-control"
+        id="exampleFormControlInput1"
+      />
+    </div>
+    <div class="mb-3">
+      <label>Comments</label>
+      <textarea
+        class="form-control progress"
+        style="height: 35vh"
+        name="comment"
+        [ngModel]="customerReporter.comment"
+      ></textarea>
+    </div>
+    <div class="col-auto">
+      <button type="submit" class="btn btn-primary mb-3">Enviar</button>
+    </div>
+  </form>
+</div>

@@ -9,11 +9,15 @@ import { NgForm } from '@angular/forms';
   styleUrls: ['./promotion-form.component.scss'],
 })
 export class PromotionFormComponent implements OnInit {
+  addPromotionModalTitle: string = 'Adicione uma  promoção';
+  editPromotionModalTitle: string = 'Edite a promoção';
   dataPromotion: promotionsEdit[];
+  editableObj: any[];
   dataPromotionEdit: promotionsEdit;
   currentId: string = '';
   editField: boolean = false;
   createForm: boolean = false;
+  editForm: boolean = false;
   @ViewChild('nodisplay') nodisplay: TemplateRef<any>;
 
   @ViewChild('productEdit', { static: false }) form: NgForm;
@@ -44,32 +48,29 @@ export class PromotionFormComponent implements OnInit {
     id: '',
   };
 
-  onEditClicked(id: string) {
-    this.currentId = id;
-    this.editField = true;
-    let PromotionObj = this.dataPromotion.find((item) => {
-      return item.id === id;
-    });
-    if (PromotionObj) {
-      this.form.setValue({
-        title: PromotionObj.title,
-        comment: PromotionObj.comment,
-        id: this.currentId,
-      });
-    }
+  onEditClicked(item: any) {
+    this.editableObj = item;
+    this.toggleCreateEditForm('edit');
   }
 
-  onEdit(form: NgForm) {
-    this.editField = false;
-    this.newApi.updateImage('promotions', this.currentId, form);
-    setTimeout(() => {
-      this.fetchEnvironmentPromotions();
-    }, 1000);
-  }
   toggleCreateForm() {
     this.createForm = !this.createForm;
   }
   hiddenEditModasl() {
     this.editField = false;
+  }
+
+  toggleCreateEditForm(typeForm: string) {
+    if (typeForm === 'edit') {
+      this.editForm = !this.editForm;
+      if (this.editForm === true) {
+        this.createForm = false;
+      }
+    } else if (typeForm === 'add') {
+      this.createForm = !this.createForm;
+      if (this.createForm === true) {
+        this.editForm = false;
+      }
+    }
   }
 }

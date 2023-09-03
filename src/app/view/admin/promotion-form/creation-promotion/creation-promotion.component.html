@@ -1,13 +1,15 @@
+<div class="close-btn close-btn-promotion">
+  <button (click)="closeForm()">X</button>
+</div>
 <div class="container createform-promotion mt-5">
-  <button class="close-btn" (click)="closeCreateModal()">X</button>
-  <h3>Edite a sua promoção</h3>
-  <form #f="ngForm" (ngSubmit)="onSubmit(f)">
+  <h3>{{ title }}</h3>
+  <form #f="ngForm" (ngSubmit)="chooseEditOrAdd(f)">
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Titulo </label>
       <input
         type="text"
         name="title"
-        ngModel
+        [ngModel]="editableObj?.title"
         class="form-control"
         id="exampleFormControlInput1"
       />
@@ -18,7 +20,7 @@
         class="form-control progress"
         style="height: 35vh"
         name="comment"
-        ngModel
+        [ngModel]="editableObj?.comment"
       ></textarea>
     </div>
     <div class="col-auto">

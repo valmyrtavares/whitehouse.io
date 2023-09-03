@@ -1,18 +1,21 @@
-.editform-promotion{
-    position:relative;
-    .btn-close{
-        background-color:transparent;
-        border:none;
-        position: relative;
-        top: 0;
-        left: 87%;
-        font-size:30px;
-        font-size: 18px;
-    }
-    h3{
-        text-align: center;
-        font-weight: 600;
-        margin-bottom: 20px;
+.form-promotion{
+margin-top:150px;
+    .editform-promotion{
+        position:relative;
+        .btn-close{
+            background-color:transparent;
+            border:none;
+            position: relative;
+            top: 0;
+            left: 87%;
+            font-size:30px;
+            font-size: 18px;
+        }
+        h3{
+            text-align: center;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
     }
 }
 .list-form-promotions{

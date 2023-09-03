@@ -1,17 +1,11 @@
-.createform-promotion{
-    position:relative;
-    .close-btn{
-        background-color:transparent;
-        border:none;
-        position: relative;
-        top: 0;
-        left: 87%;
-        font-size:30px;
-        font-size: 18px;
-    }
+.createform-promotion{   
     h3{
         text-align: center;
         font-weight: 600;
         margin-bottom: 20px;
     }
+}
+.close-btn-promotion {    
+   top: -36px;
+   right: -50px;    
 }
