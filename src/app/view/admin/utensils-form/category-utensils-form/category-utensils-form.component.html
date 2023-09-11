@@ -32,18 +32,20 @@
     <div>
       <div class="category-list my-3" *ngFor="let item of utensilsCategoryList">
         <h3>{{ item.label }}</h3>
-        <button (click)="editCategory(item.id)" class="btn btn-primary">
-          Editar
-        </button>
-        <button (click)="deleteCategory(item.id)" class="btn btn-danger">
-          Excluir
-        </button>
+        <div>
+          <button (click)="editCategory(item.id)" class="btn btn-primary mx-1">
+            Editar
+          </button>
+          <button (click)="deleteCategory(item.id)" class="btn btn-danger">
+            Excluir
+          </button>
+        </div>
       </div>
     </div>
   </div>
 </div>
 
-<div *ngIf="displayEditForm">
+<div *ngIf="displayEditForm" class="position-modal custom-fit">
   <form #ED="ngForm" (ngSubmit)="onEdit(ED)">
     <input
       type="hidden"

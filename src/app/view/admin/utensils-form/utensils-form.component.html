@@ -1,49 +1,51 @@
 <!-- open category modal button -->
-<div *ngIf="createCategory; else nodisplay">
-  <button
-    type="button"
-    class="btn btn-primary my-5"
-    (click)="createCategory = !createCategory"
-  >
-    Crie uma categoria de itens
-  </button>
-
-  <!-- Search component -->
-  <taba-search (searchTextChanged)="onSearchTextEntered($event)"></taba-search>
-
-  <!-- list search items-->
-  <ng-container *ngFor="let item of utensilsList">
-    <div
-      *ngIf="
-        searchText != '' &&
-        item.label.toLowerCase().includes(searchText.toLowerCase())
-      "
-    >
-      <p>{{ item.label }}</p>
-      <button (click)="deleteUtensil(item.id)" class="btn btn-danger">
-        Excluir
-      </button>
-      <button (click)="editUtensil(item.id)" class="btn btn-success">
-        Editar
-      </button>
-    </div>
-  </ng-container>
-
-  <!-- Add button item -->
-  <div class="btn-add">
+<div class="utensils-wrapper">
+  <div class *ngIf="createCategory; else nodisplay">
     <button
       type="button"
-      class="btn btn-primary rounded-circle"
-      (click)="toggleCreateForm('add')"
+      class="btn btn-primary my-5"
+      (click)="createCategory = !createCategory"
     >
-      +
+      Crie uma categoria de itens
     </button>
-    <p>Adicione um novo item</p>
-  </div>
 
-  <!-- Add item -->
-  <div class="position-modal">
-    <ng-container *ngIf="createUtensils">
+    <!-- Search component -->
+    <taba-search
+      (searchTextChanged)="onSearchTextEntered($event)"
+    ></taba-search>
+
+    <!-- list search items-->
+    <ng-container *ngFor="let item of utensilsList">
+      <div
+        *ngIf="
+          searchText != '' &&
+          item.label.toLowerCase().includes(searchText.toLowerCase())
+        "
+      >
+        <p>{{ item.label }}</p>
+        <button (click)="deleteUtensil(item.id)" class="btn btn-danger">
+          Excluir
+        </button>
+        <button (click)="editUtensil(item.id)" class="btn btn-success">
+          Editar
+        </button>
+      </div>
+    </ng-container>
+
+    <!-- Add button item -->
+    <div class="btn-add">
+      <button
+        type="button"
+        class="btn btn-primary rounded-circle"
+        (click)="toggleCreateForm('add')"
+      >
+        +
+      </button>
+      <p>Adicione um novo item</p>
+    </div>
+
+    <!-- Add item -->
+    <div class="position-modal" *ngIf="createUtensils">
       <taba-add-edit
         [title]="titleAdd"
         [utensilEditObj]=""
@@ -52,40 +54,39 @@
         (closeModal)="toggleCreateForm($event)"
         [typeOfData]="'add'"
       ></taba-add-edit>
+    </div>
+
+    <!-- List of items -->
+    <ng-container *ngFor="let item of utensilsList">
+      <div class="utensil-list my-3">
+        <p>{{ item.label }}</p>
+        <button (click)="deleteUtensil(item.id)" class="btn btn-danger">
+          Excluir
+        </button>
+        <button (click)="editUtensil(item.id)" class="btn btn-success">
+          Editar
+        </button>
+      </div>
+    </ng-container>
+
+    <!-- Edit item -->
+    <ng-container *ngIf="editUtensils">
+      <div class="position-modal">
+        <taba-add-edit
+          [title]="titleEdit"
+          [utensilEditObj]="utensilEditObj"
+          [utensilsCategoryList]="utensilsCategoryList"
+          [typeOfData]="'edit'"
+          (parentFunction)="parentFunction($event)"
+          (closeModal)="toggleCreateForm($event)"
+        ></taba-add-edit>
+      </div>
     </ng-container>
   </div>
-
-  <!-- List of items -->
-  <ng-container *ngFor="let item of utensilsList">
-    <div class="utensil-list my-3">
-      <p>{{ item.label }}</p>
-      <button (click)="deleteUtensil(item.id)" class="btn btn-danger">
-        Excluir
-      </button>
-      <button (click)="editUtensil(item.id)" class="btn btn-success">
-        Editar
-      </button>
-    </div>
-  </ng-container>
-
-  <!-- Edit item -->
-  <ng-container *ngIf="editUtensils">
-    <div class="position-modal">
-      <taba-add-edit
-        [title]="titleEdit"
-        [utensilEditObj]="utensilEditObj"
-        [utensilsCategoryList]="utensilsCategoryList"
-        [typeOfData]="'edit'"
-        (parentFunction)="parentFunction($event)"
-        (closeModal)="toggleCreateForm($event)"
-      ></taba-add-edit>
-    </div>
-  </ng-container>
+  <!-- modal create category -->
+  <ng-template #nodisplay>
+    <taba-category-utensils-form
+      (closeModal)="closeModalCategory($event)"
+    ></taba-category-utensils-form>
+  </ng-template>
 </div>
-
-<!-- modal create category -->
-<ng-template #nodisplay>
-  <taba-category-utensils-form
-    (closeModal)="closeModalCategory($event)"
-  ></taba-category-utensils-form>
-</ng-template>
