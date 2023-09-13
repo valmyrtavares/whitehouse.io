@@ -29,6 +29,7 @@ export class CreateImagesEnvironmentComponent {
   }
 
   onSubmit(form: NgForm) {
+    debugger;
     form.value.image = this.url.transformUrl(form.value.image);
     this.newApi.createCollection('environementPropertyPlaces', form.value);
     this.newApi.getData('environementPropertyPlaces').subscribe((data) => {
