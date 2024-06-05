@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component  } from '@angular/core';
+import { AngularFireStorage } from '@angular/fire/compat/storage'; 
 
 @Component({
   selector: 'taba-header',
@@ -6,6 +7,20 @@ import { Component } from '@angular/core';
   styleUrls: ['./header.component.scss'],
 })
 export class HeaderComponent {
-  imagem: string =
-    'https://drive.google.com/uc?export=download&id=15ssu7Z0gGjSnbBtdgoKKLkyVBT8Tmu3-';
-}
+
+  constructor(private storage: AngularFireStorage){}
+
+  imagem: any;
+    
+    async onFileChange(event: any){
+      const file = event.target.files[0]     
+      if(file){
+       const path = `header/${file.name}`;
+       const uploadTask = await this.storage.upload(path, file)
+       const url = await uploadTask.ref.getDownloadURL();
+       console.log(url)
+       this.imagem = url 
+
+      }
+    }
+  }
