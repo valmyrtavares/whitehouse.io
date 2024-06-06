@@ -31,10 +31,11 @@
   <div class="mb-3">
     <label for="exampleFormControlInput1" class="form-label">Imagem </label>
     <input
-      type="text"
+      type="file"
       name="image"
       ngModel
       class="form-control"
+      (change)="onFileChange($event)"
       id="exampleFormControlInput1"
     />
   </div>

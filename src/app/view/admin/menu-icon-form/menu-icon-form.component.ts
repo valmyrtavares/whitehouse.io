@@ -64,8 +64,13 @@ export class MenuIconFormComponent implements OnInit {
   }
 
   onEdit(form: NgForm) {
-    form.value.image = this.newImages    
+    debugger
+    if(this.newImages ){
+      form.value.image = this.newImages
+      }  
     this.editField = false;   
+    form.value
+   
     this.newApi.updateImage('environementProperty', this.currentId, form.value);
     setTimeout(() => {
       this.fetchEnvironmentPromotions('environementProperty');

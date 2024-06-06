@@ -4,6 +4,7 @@ import { NgForm } from '@angular/forms';
 import { ApiRealtimeDatabaseService } from 'src/app/mock/api-realtime-database.service';
 import { UsefulFunctionsService } from 'src/app/mock/useful-functions.service';
 import { Router } from '@angular/router';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Component({
   selector: 'taba-create-images-environment',
@@ -15,8 +16,10 @@ export class CreateImagesEnvironmentComponent {
   constructor(
     private newApi: ApiRealtimeDatabaseService,
     private url: UsefulFunctionsService,
-    private router: Router
+    private router: Router,
+    private storage: AngularFireStorage
   ) {}
+  newImages:any;
 
   stayOnThePage: boolean = false;
   environmentImages: environementPropertyPlaces = {
@@ -24,13 +27,24 @@ export class CreateImagesEnvironmentComponent {
     category: '',
     image: '',
   };
+
+  
   closeFormCreate() {
     this.parentFunction.emit();
   }
+  async onFileChange(event:any){
+    const file = event.target.files[0]
+    if(file){
+     const path = `eachImagePlacesHouseCollection/${file.name}`
+     const uploadTask = await this.storage.upload(path, file)
+     this.newImages = await uploadTask.ref.getDownloadURL();
+      
+    }
+  }
 
   onSubmit(form: NgForm) {
-    debugger;
-    form.value.image = this.url.transformUrl(form.value.image);
+    
+    form.value.image = this.newImages
     this.newApi.createCollection('environementPropertyPlaces', form.value);
     this.newApi.getData('environementPropertyPlaces').subscribe((data) => {
       if (!this.stayOnThePage) {
@@ -38,6 +52,7 @@ export class CreateImagesEnvironmentComponent {
       }
       this.parentFunction.emit();
       form.reset();
+      this.newImages=""
     });
   }
 }
