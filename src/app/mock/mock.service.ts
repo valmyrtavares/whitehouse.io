@@ -449,7 +449,7 @@ export class MockService {
       comment:
         '5 dias no paraíso por apenas de 5 a 10 de Outubro R$ 5.500,00 com Chatz Incluso',
       image:
-        'https://www.plural.jor.br/wp-content/uploads/2022/07/festival-gastronomia-caicara-pontal-parana-4.jpeg',
+        'https://firebasestorage.googleapis.com/v0/b/projeto-primeiro-de92d.appspot.com/o/articles%2FGastronomia.png?alt=media&token=23ddd09d-d74e-43bb-8dc7-6bb8d7b13993',
       route: 'gastronomyArticle',
     },
     {
@@ -457,7 +457,7 @@ export class MockService {
       comment:
         '5 dias no paraíso por apenas de 5 a 10 de Outubro R$ 5.500,00 com Chatz Incluso',
       image:
-        'https://vidacigana.com/wp-content/uploads/2019/12/passeio-de-barco-pelo-rio-de-janeiro-1-4.jpg',
+        'https://firebasestorage.googleapis.com/v0/b/projeto-primeiro-de92d.appspot.com/o/articles%2FPasseios.jpg?alt=media&token=ee0a5ff8-04f1-45f9-a643-8f841e361d2b',
       route: 'toursArticle',
     },
     {
@@ -465,7 +465,7 @@ export class MockService {
       comment:
         '5 dias no paraíso por apenas de 5 a 10 de Outubro R$ 5.500,00 com Chatz Incluso',
       image:
-        'https://www.quadrarealty.com.br/wp-content/uploads/2023/01/DJI_0022.jpg',
+        'https://firebasestorage.googleapis.com/v0/b/projeto-primeiro-de92d.appspot.com/o/articles%2FCondoninio.jpg?alt=media&token=9ce89b54-8b11-419b-85dd-9bdfdea5ac44',
       route: 'internalAreaArticle',
     },
   ];

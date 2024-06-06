@@ -43,6 +43,7 @@ export class HomeComponent implements OnInit {
     this.customersReporters = this.data.customersReporters;
     this.homeUtensils = this.data.mockData;
     this.articles = this.data.articles;
+    console.log("ARTICLES  ", this.articles)
 
     // this.api.getData('environmentProperty').subscribe((environmentProperty) => {
     //   this.apiEnvironmentProperty = environmentProperty;

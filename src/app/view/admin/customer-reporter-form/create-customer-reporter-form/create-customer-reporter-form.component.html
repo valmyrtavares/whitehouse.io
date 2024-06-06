@@ -17,21 +17,22 @@
         aria-label="Default select example"
       >
         <option [ngModel]="customerReporter.category" selected>
-          "" Escolha o local da sua imagem
+          "Escolha o local da sua imagem"
         </option>
         <option value="firstCustomer">Primeiro Cliente</option>
-        <option value="secondCustomer">Segundo Cliente 1</option>
+        <option value="secondCustomer">Segundo Cliente </option>
         <option value="thirdCustomer">Terceiro Cliente</option>
       </select>
     </div>
     <div class="mb-3">
       <label for="exampleFormControlInput1" class="form-label">Imagem </label>
       <input
-        type="text"
+        type="file"
         name="image"
         [ngModel]="customerReporter.image"
         class="form-control"
         id="exampleFormControlInput1"
+        (change)="onFileChange($event)"
       />
     </div>
     <div class="mb-3">
