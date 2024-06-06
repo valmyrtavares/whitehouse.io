@@ -1,6 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ComponentModule } from 'src/app/components/component.module';
+import {AngularFireModule} from '@angular/fire/compat';
+import { AngularFireStorageModule } from '@angular/fire/compat/storage';
+import {environment} from '../../../environments/environemnt'
 
 //Components
 import { FormMenuComponent } from './form-menu/form-menu.component';
@@ -24,6 +27,8 @@ import { CreateArticlesFormComponent } from './articles-form/create-articles-for
     CustomerModule,
     UtensilsModule,
     PromotionModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule
   ],
 })
 export class AdminModule {}

@@ -10,7 +10,7 @@
       </div>
       <div class="mb-3">
         <label for="exampleFormControlInput1" class="form-label">Imagem </label>
-        <input type="text" name="image" ngModel class="form-control" />
+        <input type="file" name="image" ngModel class="form-control" (change)="onFileChange($event)" />
       </div>
 
       <div class="col-auto">

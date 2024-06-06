@@ -58,8 +58,8 @@ export class HomeComponent implements OnInit {
       .subscribe((data: environmentPropetyModel[]) => {
         // console.log(data);
         this.apiEnvironmentProperty = data;
+        console.log("apiEnvironmentProperty   ", this.apiEnvironmentProperty)
       });
-
     this.newApi
       .getData('customersReporters')
       .subscribe((data: customerReporters[]) => {

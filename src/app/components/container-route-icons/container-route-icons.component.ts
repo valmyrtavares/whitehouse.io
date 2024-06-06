@@ -7,8 +7,9 @@ import { MockService } from '../../mock/mock.service';
   templateUrl: './container-route-icons.component.html',
   styleUrls: ['./container-route-icons.component.scss'],
 })
-export class ContainerRouteIconsComponent {
+export class ContainerRouteIconsComponent   {
   @Input() currentData: environmentPropetyModel[];
   @Input() title: string;
   constructor(private data: MockService) {}
+ 
 }
