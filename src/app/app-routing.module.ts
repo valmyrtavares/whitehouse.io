@@ -13,6 +13,7 @@ import { UtensilsFormComponent } from './view/admin/utensils-form/utensils-form.
 import { AdminGuardService } from './mock/admin-guard.service';
 import { LoginComponent } from './view/admin/login/login.component';
 import { ArticlesFormComponent } from './view/admin/articles-form/articles-form.component';
+import { FrontImageFormComponent } from './view/admin/front-image-form/front-image-form.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -30,6 +31,7 @@ const routes: Routes = [
     canActivate: [AdminGuardService],
   },
   { path: 'customer-form', component: CustomerReporterFormComponent },
+  { path: 'form-front-image', component: FrontImageFormComponent },
   { path: 'form-promotion', component: PromotionFormComponent },
   { path: 'form-icon-menu', component: MenuIconFormComponent },
   { path: 'form-utensils', component: UtensilsFormComponent },

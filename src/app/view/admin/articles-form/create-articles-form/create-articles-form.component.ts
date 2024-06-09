@@ -22,6 +22,10 @@ export class CreateArticlesFormComponent {
     private router: Router
   ) {}
 
+  ngOnInit(){
+    console.log("OBJETO PASSADO    ", this.editableObj)
+  }
+
   chooseEditOrAdd(data: NgForm) {
     if (this.typeForm === 'add') {
       this.onSubmit(data);

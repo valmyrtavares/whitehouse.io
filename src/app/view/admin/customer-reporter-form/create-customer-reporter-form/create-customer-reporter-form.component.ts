@@ -31,7 +31,7 @@ export class CreateCustomerReporterFormComponent implements OnInit {
     //   category: '',
     //   comment: '',
     // };
-    console.log(this.customerReporter);
+   
   }
   onSubmit(form: NgForm) {
     this.parentFunction.emit(false);

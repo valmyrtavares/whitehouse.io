@@ -20,8 +20,7 @@ export class CustomerReporterFormComponent implements OnInit {
     this.getReporterData('customersReporters');
   }
   getReporterData(data: string) {
-    this.newApi.getData(data).subscribe((data: customerReportersEdit[]) => {
-      console.log(data);
+    this.newApi.getData(data).subscribe((data: customerReportersEdit[]) => {      
       this.customerReporterList = data;
     });
   }

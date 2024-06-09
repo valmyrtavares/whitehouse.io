@@ -28,8 +28,7 @@ export class CategoryUtensilsFormComponent implements OnInit {
 
   fetchCategoryList(data: string) {
     this.newApi.getData(data).subscribe((res: []) => {
-      this.utensilsCategoryList = res;
-      console.log(this.utensilsCategoryList);
+      this.utensilsCategoryList = res;     
     });
   }
 

@@ -1,0 +1,12 @@
+.center-container{
+    display: flex;
+    justify-content: space-around;
+    padding: 5%;
+    flex-direction: column;
+    align-items: center;
+    gap: 80px ;
+    .checking-image{
+        width: 40%;
+    }
+
+}

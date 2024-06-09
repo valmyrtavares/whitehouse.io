@@ -59,7 +59,7 @@ export class EnvironmentImagesComponent {
   fetchEnvironmentImages() {
     this.newApi.getData('environementPropertyPlaces').subscribe((data) => {
       this.environmentImagesformData = data;
-      console.log(this.environmentImagesformData);
+     
     });
   }
 
@@ -68,8 +68,7 @@ export class EnvironmentImagesComponent {
     this.currentId = id;
     let environmentImagesEdit = this.environmentImagesformData.find((item) => {
       return item.id === id;
-    });
-    console.log(environmentImagesEdit);
+    });  
     if (environmentImagesEdit) {
       this.form.setValue({
         image: environmentImagesEdit.image,

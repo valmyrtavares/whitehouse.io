@@ -42,8 +42,7 @@ export class HomeComponent implements OnInit {
     // this.dataEnvironementProperty = this.data.environementProperty;
     this.customersReporters = this.data.customersReporters;
     this.homeUtensils = this.data.mockData;
-    this.articles = this.data.articles;
-    console.log("ARTICLES  ", this.articles)
+    this.articles = this.data.articles;  
 
     // this.api.getData('environmentProperty').subscribe((environmentProperty) => {
     //   this.apiEnvironmentProperty = environmentProperty;
@@ -56,15 +55,13 @@ export class HomeComponent implements OnInit {
     //TODO - Refatorar em uma função externa
     this.newApi
       .getData('environementProperty')
-      .subscribe((data: environmentPropetyModel[]) => {
-        // console.log(data);
+      .subscribe((data: environmentPropetyModel[]) => {        
         this.apiEnvironmentProperty = data;
         console.log("apiEnvironmentProperty   ", this.apiEnvironmentProperty)
       });
     this.newApi
       .getData('customersReporters')
-      .subscribe((data: customerReporters[]) => {
-        console.log(data);
+      .subscribe((data: customerReporters[]) => {       
         this.customersReporters = data;
       });
   }

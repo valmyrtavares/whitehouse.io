@@ -1,0 +1,4 @@
+<div class="container center-container">
+    <input type="file" (change)="onFileChange($event)"/>
+    <img class="checking-image"*ngIf="newImage" [src]="newImage" alt="imageFront"/>
+</div>

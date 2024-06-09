@@ -28,6 +28,13 @@ export class ApiRealtimeDatabaseService {
       );
   }
 
+  getObjData(data:any){
+    return this.http
+    .get(
+      `https://projeto-primeiro-de92d-default-rtdb.firebaseio.com/${data}.json`
+    )
+  }
+
   createCollection(data: string, content: Object) {
     this.http
       .post(
@@ -35,7 +42,7 @@ export class ApiRealtimeDatabaseService {
         content
       )
       .subscribe((res) => {
-        console.log(res);
+       
       });
   }
 
@@ -53,7 +60,8 @@ export class ApiRealtimeDatabaseService {
         form
       )
       .subscribe((res) => {
-        console.log(res);
+       
       });
   }
 }
+//https://firebasestorage.googleapis.com/v0/b/projeto-primeiro-de92d.appspot.com/o/frontImageHome%2F4X3A8577.JPG?alt=media&token=06d1f51f-bf43-4348-9811-c2ea25aef6b3

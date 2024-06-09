@@ -30,14 +30,12 @@ export class PromotionFormComponent implements OnInit {
 
   fetchEnvironmentPromotions() {
     this.newApi.getData('promotions').subscribe((data: promotionsEdit[]) => {
-      this.dataPromotion = data;
-      console.log(this.dataPromotion);
+      this.dataPromotion = data;    
     });
   }
 
   deletePromotion(id: string) {
-    this.newApi.deleteImage('promotions', id).subscribe((res) => {
-      console.log(res);
+    this.newApi.deleteImage('promotions', id).subscribe((res) => {    
       this.fetchEnvironmentPromotions();
     });
   }

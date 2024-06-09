@@ -24,8 +24,7 @@ export class UsefulFunctionsService {
   }
 
   transformCategoryName(data: string): String {
-    const words: string[] = data.split(' ');
-    console.log(words);
+    const words: string[] = data.split(' ');  
     if (words.length > 1) {
       return (
         words[0].toLowerCase() +

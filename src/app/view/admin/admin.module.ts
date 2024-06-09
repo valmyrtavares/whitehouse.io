@@ -9,6 +9,7 @@ import {environment} from '../../../environments/environemnt'
 import { FormMenuComponent } from './form-menu/form-menu.component';
 import { MenuIconFormComponent } from './menu-icon-form/menu-icon-form.component';
 import { FormsModule } from '@angular/forms';
+import {FrontImageFormComponent} from './front-image-form/front-image-form.component'
 
 import { CustomerModule } from './customer-reporter-form/customer.module';
 
@@ -19,10 +20,10 @@ import { ArticlesFormComponent } from './articles-form/articles-form.component';
 import { CreateArticlesFormComponent } from './articles-form/create-articles-form/create-articles-form.component';
 
 @NgModule({
-  declarations: [FormMenuComponent, MenuIconFormComponent, LoginComponent, ArticlesFormComponent, CreateArticlesFormComponent],
+  declarations: [FormMenuComponent, MenuIconFormComponent, LoginComponent, ArticlesFormComponent, CreateArticlesFormComponent, FrontImageFormComponent],
   imports: [
     CommonModule,
-    ComponentModule,
+    ComponentModule,    
     FormsModule,
     CustomerModule,
     UtensilsModule,

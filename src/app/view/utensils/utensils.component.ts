@@ -59,7 +59,7 @@ export class UtensilsComponent {
     return true;
   }
   toggleItems(category) {
-    console.log(category);
+    
   }
   onSearchTextEntered(searchValue: string) {
     this.searchText = searchValue;
@@ -70,7 +70,7 @@ export class UtensilsComponent {
         item.displayItems = !data.displayItems;
       }
     });
-    console.log(this.utensilsCategoryList);
+    
   }
   showItem(data: string) {
     this.highlightImage = data;

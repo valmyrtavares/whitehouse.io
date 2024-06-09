@@ -28,12 +28,12 @@ export class MenuIconFormComponent implements OnInit {
     this.fetchEnvironmentPromotions('environementProperty');
   }
 
-  async onFileChange(event:any){
+  async onFileChange(event:any){  //load image and send the file to firebase storage
     const file = event.target.files[0]
     if(file){
      const path = `imagePlacesHouse/${file.name}`
      const uploadTask = await this.storage.upload(path, file)
-     this.newImages = await uploadTask.ref.getDownloadURL();
+     this.newImages = await uploadTask.ref.getDownloadURL(); //take the image's url
       
     }
   }
@@ -42,17 +42,17 @@ export class MenuIconFormComponent implements OnInit {
     this.newApi
       .getData(data)
       .subscribe((data: environmentPropetyModelEdit[]) => {
-        this.apiEnvironmentProperty = data;
+        this.apiEnvironmentProperty = data;     
       });
   }
 
   onEditClicked(id: string) {
+    debugger
     this.currentId = id;
     this.editField = true;
     let PromotionObj = this.apiEnvironmentProperty.find((item) => {
       return item.id === id;
-    });
-    console.log(PromotionObj);
+    });  
     if (PromotionObj) {
       this.form.setValue({
         comment: PromotionObj.comment,
@@ -63,8 +63,7 @@ export class MenuIconFormComponent implements OnInit {
     }
   }
 
-  onEdit(form: NgForm) {
-    debugger
+  onEdit(form: NgForm) {    
     if(this.newImages ){
       form.value.image = this.newImages
       }  
