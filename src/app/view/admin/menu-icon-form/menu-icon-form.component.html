@@ -12,10 +12,13 @@
         <label for="exampleFormControlInput1" class="form-label">Imagem </label>
         <input type="file" name="image" ngModel class="form-control" (change)="onFileChange($event)" />
       </div>
-
-      <div class="col-auto">
+ 
+      <div *ngIf="clickableButton;else nodisplay" class="col-auto">
         <button type="submit" class="btn btn-primary mb-3">Enviar</button>
       </div>
+      <ng-template #nodisplay>
+        <button [disabled]="!clickableButton" type="submit" class="btn btn-primary mb-3">Enviando imagem...</button>
+      </ng-template>
     </form>
   </div>
 
@@ -23,7 +26,7 @@
     <div class="card-image">
       <img [src]="item.image" alt="" />
       <p>{{ item.label }}</p>
-      <button class="btn btn-primary" (click)="onEditClicked(item.id)">
+      <button  class="btn btn-primary" (click)="onEditClicked(item.id)">
         Editar
       </button>
     </div>

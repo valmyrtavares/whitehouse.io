@@ -5,6 +5,8 @@
     ></taba-create-images-environment>
   </div>
   <div class="environment-list">
+
+    <!-- BUTTON OPEN MODAL -->
     <div class="btn-add">
       <button
         type="button"
@@ -15,8 +17,8 @@
       </button>
       <p>Adicione uma nova imagem</p>
     </div>
-    <!-- All images environements -->
 
+    <!-- All images environements -->
     <ng-container *ngFor="let item of environmentImagesformData">
       <div class="image-form-wrapper">
         <div class="image-form"><img [src]="item.image" alt="" /></div>
@@ -48,18 +50,19 @@
           ngModel
           aria-label="Default select example"
         >
-          <option selected>Escolha o local da sua imagem</option>
-          <option value="frontHome">Fachada</option>
-          <option value="suíteRoom">Suite 1</option>
-          <option value="livingRoom">Sala</option>
-          <option value="kitchen">Cozinha</option>
-          <option value="poll">Piscina</option>
-          <option value="garden">Jardins</option>
-          <option value="barbecueArea">Churrasco</option>
-          <option value="pizzaArea">Pizza</option>
-          <option value="ranchoArea">Rancho</option>
-          <option value="aereo">Aéreo</option>
-          <option value="secondSuite">Suite 2</option>
+        <option selected>Escolha o local da sua imagem</option>
+        <option value="frontHome">Fachada</option>
+        <option value="kitchen">Cozinha</option>
+        <option value="restRoom">Banheiros</option>
+        <option value="livingRoom">Sala de Estar</option>
+        <option value="ranchoArea">Rancho</option>
+        <option value="swimmingPool">Piscina</option>
+        <option value="garden">Jardins</option>
+        <option value="barbecueArea">Churrasco</option>
+        <option value="pizzaArea">Forno de Pizza</option>
+        <option value="suiteRoom">Suite </option>
+        <option value="secondSuite">Segunda Suite</option>
+        <option value="rooms">Quartos</option>
         </select>
       </div>
       <div class="mb-3">
@@ -67,17 +70,19 @@
           >Editar Imagem
         </label>
         <input
-          type="text"
-          name="image"
-          id="image"
-          ngModel
+          type="file"
+         (change)="onFileChange($event)"
           class="form-control"
           id="exampleFormControlInput1"
         />
       </div>
-      <div class="col-auto">
+      <div *ngIf="clickableButton;else nodisplay" class="col-auto">
         <button type="submit" class="btn btn-primary mb-3">Enviar</button>
       </div>
+      <ng-template #nodisplay class="col-auto">
+        <button [disabled]="!clickableButton" type="submit" class="btn btn-primary mb-3">Enviando imagem...</button>
+      </ng-template>    
+      
     </form>
     <div class="form-check my-5">
       <input

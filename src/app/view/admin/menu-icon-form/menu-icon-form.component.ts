@@ -14,7 +14,9 @@ export class MenuIconFormComponent implements OnInit {
   apiEnvironmentProperty: environmentPropetyModelEdit[];
   currentId: string;
   editField: boolean = false;
-  newImages: any;
+  newImages: any=undefined;
+  clickableButton:boolean= true;
+ 
 
   @ViewChild('productEdit', { static: false }) form: NgForm;
 
@@ -31,10 +33,12 @@ export class MenuIconFormComponent implements OnInit {
   async onFileChange(event:any){  //load image and send the file to firebase storage
     const file = event.target.files[0]
     if(file){
+      this.clickableButton=false;
      const path = `imagePlacesHouse/${file.name}`
      const uploadTask = await this.storage.upload(path, file)
-     this.newImages = await uploadTask.ref.getDownloadURL(); //take the image's url
-      
+     this.newImages = await uploadTask.ref.getDownloadURL(); //take the image's url      
+    this.newImages ? this.clickableButton=true : this.clickableButton=false;
+
     }
   }
 
@@ -42,12 +46,12 @@ export class MenuIconFormComponent implements OnInit {
     this.newApi
       .getData(data)
       .subscribe((data: environmentPropetyModelEdit[]) => {
-        this.apiEnvironmentProperty = data;     
+        this.apiEnvironmentProperty = data;   
+        console.log(data)  
       });
   }
 
-  onEditClicked(id: string) {
-    debugger
+  onEditClicked(id: string) {   
     this.currentId = id;
     this.editField = true;
     let PromotionObj = this.apiEnvironmentProperty.find((item) => {

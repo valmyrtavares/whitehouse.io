@@ -20,6 +20,8 @@ export class CreateImagesEnvironmentComponent {
     private storage: AngularFireStorage
   ) {}
   newImages:any;
+  clickableButton:boolean= true;
+  
 
   stayOnThePage: boolean = false;
   environmentImages: environementPropertyPlaces = {
@@ -32,13 +34,16 @@ export class CreateImagesEnvironmentComponent {
   closeFormCreate() {
     this.parentFunction.emit();
   }
-  async onFileChange(event:any){
+
+  //Method called in upload new image
+  async onFileChange(event:any){  //load image and send the file to firebase storage
     const file = event.target.files[0]
     if(file){
-     const path = `eachImagePlacesHouseCollection/${file.name}`
+      this.clickableButton=false;
+     const path = `imagePlacesHouse/${file.name}`
      const uploadTask = await this.storage.upload(path, file)
-     this.newImages = await uploadTask.ref.getDownloadURL();
-      
+     this.newImages = await uploadTask.ref.getDownloadURL(); //take the image's url      
+    this.newImages ? this.clickableButton=true : this.clickableButton=false;
     }
   }
 

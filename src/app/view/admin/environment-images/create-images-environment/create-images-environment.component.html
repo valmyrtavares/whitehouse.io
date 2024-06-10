@@ -15,17 +15,17 @@
     >
       <option selected>Escolha o local da sua imagem</option>
       <option value="frontHome">Fachada</option>
-      <option value="suíteRoom">Suite 1</option>
-      <option value="rooms">Quarto</option>
-      <option value="livingRoom">Sala</option>
       <option value="kitchen">Cozinha</option>
+      <option value="restRoom">Banheiros</option>
+      <option value="livingRoom">Sala de Estar</option>
+      <option value="ranchoArea">Rancho</option>
       <option value="swimmingPool">Piscina</option>
       <option value="garden">Jardins</option>
       <option value="barbecueArea">Churrasco</option>
-      <option value="pizzaArea">Pizza</option>
-      <option value="ranchoArea">Rancho</option>
-      <option value="aereo">Aéreo</option>
-      <option value="secondSuite">Suite 2</option>
+      <option value="pizzaArea">Forno de Pizza</option>
+      <option value="suiteRoom">Suite </option>
+      <option value="secondSuite">Segunda Suite</option>
+      <option value="rooms">Quartos</option>
     </select>
   </div>
   <div class="mb-3">
@@ -40,9 +40,12 @@
     />
   </div>
 
-  <div class="col-auto">
+  <div class="col-auto" *ngIf="clickableButton;else nodisplay">
     <button type="submit" class="btn btn-primary mb-3">Enviar</button>
   </div>
+  <ng-template #nodisplay class="col-auto">
+    <button [disabled]="!clickableButton" type="submit" class="btn btn-primary mb-3">Enviando imagem...</button>
+  </ng-template>  
 </form>
 <div class="form-check my-5">
   <input

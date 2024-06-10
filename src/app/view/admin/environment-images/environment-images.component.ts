@@ -9,6 +9,7 @@ import { ApiService } from 'src/app/mock/api.service';
 import { ApiRealtimeDatabaseService } from 'src/app/mock/api-realtime-database.service';
 import { Router } from '@angular/router';
 import { UsefulFunctionsService } from 'src/app/mock/useful-functions.service';
+import { AngularFireStorage } from '@angular/fire/compat/storage';
 
 @Component({
   selector: 'app-environment-images',
@@ -22,6 +23,8 @@ export class EnvironmentImagesComponent {
   editField: boolean = true;
   currentId: string = '';
   stayOnThePage: boolean = false;
+  newImages:any=undefined
+  clickableButton:boolean= true;
 
   @ViewChild('productEdit', { static: false }) form: NgForm;
 
@@ -29,7 +32,8 @@ export class EnvironmentImagesComponent {
     private api: ApiService,
     private newApi: ApiRealtimeDatabaseService,
     private router: Router,
-    private url: UsefulFunctionsService
+    private url: UsefulFunctionsService,
+    private storage: AngularFireStorage
   ) {}
 
   ngOnInit() {
@@ -59,10 +63,12 @@ export class EnvironmentImagesComponent {
   fetchEnvironmentImages() {
     this.newApi.getData('environementPropertyPlaces').subscribe((data) => {
       this.environmentImagesformData = data;
+      console.log("environementPropertyPlaces    ",  data)
      
     });
   }
 
+  //Method called from edit button getting the id object
   onEditClicked(id: string) {
     this.editField = false;
     this.currentId = id;
@@ -77,8 +83,20 @@ export class EnvironmentImagesComponent {
       });
     }
   }
+  //Method called in upload new image
+  async onFileChange(event:any){  //load image and send the file to firebase storage
+    const file = event.target.files[0]
+    if(file){
+      this.clickableButton=false;
+     const path = `imagePlacesHouse/${file.name}`
+     const uploadTask = await this.storage.upload(path, file)
+     this.newImages = await uploadTask.ref.getDownloadURL(); //take the image's url      
+    this.newImages ? this.clickableButton=true : this.clickableButton=false;
+    }
+  }
+
   onEdit(form: NgForm) {
-    form.value.image = this.url.transformUrl(form.value.image);
+    form.value.image =  this.newImages;
     this.editField = true;
     this.newApi.updateImage(
       'environementPropertyPlaces',
