@@ -29,11 +29,12 @@
         position: fixed;
         max-width: 90%;
         left: 5%;
-        top: 18%;
-        box-shadow: 10px 10px 20px black;
-        background-color: #ffffff;
+        top: 5%;
+        box-shadow: 10px 10px 20px #000;
+        background-color: #fff;
         padding: 20px;
         border-radius: 20px;
+        z-index: 100;
     }
     .btn-add{
         display:flex;
